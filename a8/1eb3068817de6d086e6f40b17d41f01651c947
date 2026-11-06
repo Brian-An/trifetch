@@ -1,0 +1,21 @@
+linda_worker/state.py
+  s_2265064f6b02bd::t_00f0f119c47ca0 22-23
+tests/test_state.py
+  s_2265064f6b02bd::t_00f0f119c47ca0 59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a81eb3068817de6d086e6f40b17d41f01651c947",
+  "prompts": {},
+  "sessions": {
+    "s_2265064f6b02bd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1ae87-101b-79d1-8405-ae739873bf0d",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "brian-an <brian.an0906@hotmail.com>"
+    }
+  }
+}
