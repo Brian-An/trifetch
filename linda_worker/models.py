@@ -91,6 +91,7 @@ class Record(Model):
     extraction: Extraction | None = None
     action: Action | None = None
     selected: Route | None = None
+    routing_note: str | None = None
     observed: Route | None = None
     duplicate_of: str | None = None
     verification: Literal["pending", "verified", "conflict", "failed"] = "pending"

@@ -6,6 +6,8 @@ import sys
 from pathlib import Path
 
 import pytest
+from PIL import Image, ImageDraw, ImageFont
+from playwright.sync_api import Route as BrowserRoute
 from playwright.sync_api import sync_playwright
 
 from linda_worker.models import Record
@@ -162,3 +164,100 @@ def test_portal_rejects_same_session_and_accepts_fresh_session(portal: str, tmp_
                 assert observed == ROUTES["Referral"]
         finally:
             browser.close()
+
+
+def test_html_attachment_is_rejected_then_recovered(
+    portal: str, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    original = Session.download
+    intercepted = False
+
+    def download(session: Session, path: Path) -> None:
+        nonlocal intercepted
+        if not intercepted:
+            intercepted = True
+            session.page.route(
+                "**/download",
+                lambda route: route.fulfill(
+                    status=200,
+                    content_type="application/pdf",
+                    headers={"Content-Disposition": 'attachment; filename="fax.pdf"'},
+                    body="<html>503 Service Unavailable</html>",
+                ),
+                times=1,
+            )
+        original(session, path)
+
+    monkeypatch.setattr(Session, "download", download)
+    records = run_worker(portal, tmp_path / "worker")
+    assert_outcomes(records, portal)
+    assert any("not a PDF" in error.detail for r in records for error in r.errors)
+
+
+def test_permanent_download_failure_holds_queue_then_resumes(
+    portal: str, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    original = Session.download
+
+    def download(session: Session, path: Path) -> None:
+        session.page.route(
+            "**/faxes/FX-201/download",
+            lambda route: route.fulfill(
+                status=200,
+                content_type="application/pdf",
+                headers={"Content-Disposition": 'attachment; filename="fax.pdf"'},
+                body="broken",
+            ),
+        )
+        original(session, path)
+
+    with monkeypatch.context() as context:
+        context.setattr(Session, "download", download)
+        records = run_worker(portal, tmp_path / "worker")
+    assert all(r.submit_attempts == 0 for r in records)
+    assert all(r.action == "failed" for r in records if r.fax.status == "New")
+    recovered = run_worker(portal, tmp_path / "worker")
+    assert_outcomes(recovered, portal)
+
+
+def test_resend_without_matching_original_is_reviewed(
+    portal: str, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    path = tmp_path / "resend.pdf"
+    with Image.new("RGB", (1600, 2000), "white") as image:
+        ImageDraw.Draw(image).multiline_text(
+            (80, 80),
+            "FAX RESEND - REFERRAL REQUEST\n\nOriginal Document ID: REF-UNKNOWN\n"
+            "Patient: Taylor Smith\nDOB: 01/01/1980\n"
+            "This is a retransmission of an earlier document.\n"
+            "Please disregard if the original has already been received.\nPage 1 of 1",
+            fill="black",
+            font=ImageFont.load_default(size=42),
+            spacing=20,
+        )
+        image.save(path, "PDF", resolution=200)
+    body = path.read_bytes()
+    original = Session.download
+
+    def replace_download(route: BrowserRoute) -> None:
+        # Forward the UI request so the portal records its two-session prerequisite.
+        response = route.fetch()
+        try:
+            route.fulfill(
+                response=response,
+                headers={**response.headers, "content-length": str(len(body))},
+                body=body,
+            )
+        finally:
+            response.dispose()
+
+    def download(session: Session, target: Path) -> None:
+        session.page.route("**/faxes/FX-210/download", replace_download)
+        original(session, target)
+
+    monkeypatch.setattr(Session, "download", download)
+    records = run_worker(portal, tmp_path / "worker")
+    resend = next(r for r in records if r.fax.fax_id == "FX-210")
+    assert resend.action == "needs_review" and resend.verification == "verified"
+    assert resend.observed == ROUTES["Needs Review"]
+    assert resend.routing_note is not None and "without a confirmed" in resend.routing_note

@@ -187,6 +187,7 @@ class Worker:
                     )
                     record.submission_pending = False
                     record.selected = planned
+                    record.routing_note = note
                     session.prepare_route(fax.fax_id, planned, note)
                     self.capture(session, record, "confirmation")
                     record.submission_pending = True
