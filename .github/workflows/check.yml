@@ -1,0 +1,19 @@
+name: Checks
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-eng
+      - run: python -m pip install --require-hashes -r requirements-worker.txt
+      - run: python -m pip install --no-deps -e .
+      - run: python -m playwright install --with-deps chromium
+      - run: ruff check linda_worker tests
+      - run: ruff format --check linda_worker tests
+      - run: mypy linda_worker
+      - run: pytest --run-e2e -q

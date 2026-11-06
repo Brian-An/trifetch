@@ -1,0 +1,16 @@
+.git
+.venv
+.worker-venv
+__pycache__
+**/__pycache__
+.pytest_cache
+.ruff_cache
+.mypy_cache
+*.egg-info
+*.sqlite3*
+.env
+artifacts
+downloads
+build
+dist
+.DS_Store

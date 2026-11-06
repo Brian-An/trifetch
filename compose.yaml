@@ -1,0 +1,31 @@
+services:
+  portal:
+    build: .
+    image: linda-worker:local
+    command: ["python", "-m", "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+    environment:
+      LINDA_DB_PATH: /state/portal.sqlite3
+      LINDA_FAULT_MODE: ${LINDA_FAULT_MODE:-none}
+    ports:
+      - "127.0.0.1:${LINDA_PORT:-8000}:8000"
+    volumes:
+      - portal-state:/state
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket; socket.create_connection(('127.0.0.1',8000),2).close()"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
+  worker:
+    build: .
+    image: linda-worker:local
+    init: true
+    shm_size: 1gb
+    depends_on:
+      portal:
+        condition: service_healthy
+    command: ["python", "-m", "linda_worker", "--url", "http://portal:8000", "--state-dir", "/output"]
+    volumes:
+      - ./artifacts/compose:/output
+
+volumes:
+  portal-state:
