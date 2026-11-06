@@ -12,7 +12,7 @@ jobs:
       - run: sudo apt-get update && sudo apt-get install -y tesseract-ocr tesseract-ocr-eng
       - run: python -m pip install --require-hashes -r requirements-worker.txt
       - run: python -m pip install --no-deps -e .
-      - run: python -m playwright install --with-deps chromium
+      - run: python -m playwright install --with-deps --only-shell chromium
       - run: ruff check linda_worker tests
       - run: ruff format --check linda_worker tests
       - run: mypy linda_worker
