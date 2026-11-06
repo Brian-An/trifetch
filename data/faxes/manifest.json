@@ -1,0 +1,86 @@
+[
+  {
+    "fax_id": "FX-201",
+    "sender": "Bayview Family Practice",
+    "received_at": "2026-11-03 08:02",
+    "pages": 2,
+    "filename": "FX-201.pdf"
+  },
+  {
+    "fax_id": "FX-202",
+    "sender": "Summit Diagnostic Labs",
+    "received_at": "2026-11-03 08:06",
+    "pages": 1,
+    "filename": "FX-202.pdf"
+  },
+  {
+    "fax_id": "FX-203",
+    "sender": "Blue Ridge Medical",
+    "received_at": "2026-11-03 08:12",
+    "pages": 1,
+    "filename": "FX-203.pdf"
+  },
+  {
+    "fax_id": "FX-204",
+    "sender": "Blue Ridge Medical",
+    "received_at": "2026-11-03 08:12",
+    "pages": 1,
+    "filename": "FX-204.pdf"
+  },
+  {
+    "fax_id": "FX-205",
+    "sender": "Harbor Community Pharmacy",
+    "received_at": "2026-11-03 08:19",
+    "pages": 1,
+    "filename": "FX-205.pdf"
+  },
+  {
+    "fax_id": "FX-206",
+    "sender": "Hillside Records Office",
+    "received_at": "2026-11-03 08:25",
+    "pages": 2,
+    "filename": "FX-206.pdf"
+  },
+  {
+    "fax_id": "FX-207",
+    "sender": "Example Health Plan",
+    "received_at": "2026-11-03 08:31",
+    "pages": 1,
+    "filename": "FX-207.pdf"
+  },
+  {
+    "fax_id": "FX-208",
+    "sender": "Summit Diagnostic Labs",
+    "received_at": "2026-11-03 08:37",
+    "pages": 1,
+    "filename": "FX-208.pdf"
+  },
+  {
+    "fax_id": "FX-209",
+    "sender": "Unidentified Fax Number",
+    "received_at": "2026-11-03 08:42",
+    "pages": 1,
+    "filename": "FX-209.pdf"
+  },
+  {
+    "fax_id": "FX-210",
+    "sender": "Bayview Family Practice",
+    "received_at": "2026-11-03 08:49",
+    "pages": 1,
+    "filename": "FX-210.pdf"
+  },
+  {
+    "fax_id": "FX-211",
+    "sender": "Northbridge Imaging",
+    "received_at": "2026-11-03 08:54",
+    "pages": 1,
+    "filename": "FX-211.pdf"
+  },
+  {
+    "fax_id": "FX-212",
+    "sender": "Central Care Associates",
+    "received_at": "2026-11-03 09:03",
+    "pages": 3,
+    "filename": "FX-212.pdf"
+  }
+]
