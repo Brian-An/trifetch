@@ -1,99 +1,187 @@
-# Linda Mini — browser-based fax routing sandbox
+# Linda Mini fax routing worker
 
-This is a **fictional, local portal** provided for the TriFetch engineering take-home. It simulates the workflow of reviewing inbound healthcare faxes, downloading scanned PDF packets, and assigning them to the correct internal staff member, document type, and folder. **All patient, organization and document information is synthetic.** It is not a medical system and should not be used with real patient data.
+This is my worker for the Linda Mini take-home.
+It downloads faxes through the portal, reads every page with local OCR, and uses the routing SOP to pick the assignment.
+It then logs in through a fresh browser context, finds the same fax ID, submits the route, and checks what actually got saved.
 
-## Run the portal
+I focused on making it safe to rerun, especially when a submit succeeds but the response fails.
+The supplied portal and synthetic fax files are unchanged.
 
-Prerequisites: Python 3.11+ and a browser. The portal itself requires only FastAPI; **your automation/OCR code is your responsibility**.
+## Run it with Docker
 
-```bash
-python -m venv .venv
-source .venv/bin/activate             # On Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn app:app --host 127.0.0.1 --port 8000
+You need Docker with Compose.
+From the project folder, run:
+
+```sh
+docker compose up --build --abort-on-container-exit --exit-code-from worker
 ```
 
-Open `http://127.0.0.1:8000`.
+The first build installs the Python dependencies, Chromium, and Tesseract with English language data.
+Once the worker finishes, Compose stops the portal too.
+Results go to `artifacts/compose/results.json`.
 
-| Login field | Value |
+If port 8000 is already taken, use a different host port:
+
+```sh
+LINDA_PORT=8022 docker compose up --build --abort-on-container-exit --exit-code-from worker
+```
+
+The portal keeps its database in a Docker volume.
+The worker keeps its checkpoints and downloads in `artifacts/compose`.
+Running the command again checks the current UI state and resumes the same history.
+
+## Run it locally
+
+The package requires Python 3.11 or newer.
+I tested with Python 3.12 on macOS and in a Linux container.
+
+First, install Tesseract and make sure `tesseract` is on your PATH.
+
+On macOS:
+
+```sh
+brew install tesseract
+```
+
+On Debian or Ubuntu:
+
+```sh
+sudo apt-get update
+sudo apt-get install -y tesseract-ocr tesseract-ocr-eng
+```
+
+Then install the Python dependencies and browser:
+
+```sh
+python3.12 -m venv .worker-venv
+source .worker-venv/bin/activate
+python -m pip install --require-hashes -r requirements-worker.txt
+python -m pip install --no-deps -e .
+python -m playwright install chromium
+```
+
+On Linux, use `python -m playwright install --with-deps chromium` for the last step so the browser's system dependencies get installed too.
+
+Start the portal in one terminal with the environment activated:
+
+```sh
+python -m uvicorn app:app --host 127.0.0.1 --port 8000
+```
+
+In a second terminal, activate the same environment and start the worker:
+
+```sh
+source .worker-venv/bin/activate
+python -m linda_worker --url http://127.0.0.1:8000 --state-dir artifacts/run
+```
+
+The default login is the supplied training account: `agent.demo` / `demo-password-123`.
+For a native run, you can override it with `LINDA_USERNAME` and `LINDA_PASSWORD`.
+`LINDA_URL` sets the default portal URL if `--url` is omitted.
+
+On a native installation, add `--headed` to watch the browser.
+Add `--screenshots` to save confirmation and verification screenshots alongside the results.
+
+## Dependencies
+
+All document processing runs locally.
+There are no model API calls, hosted OCR services, or API keys to configure.
+
+| Dependency | What I use it for |
 |---|---|
-| Username | `agent.demo` |
-| Password | `demo-password-123` |
+| Playwright and Chromium | Logging in, navigating, downloading, filling forms, and checking saved routes |
+| PDFium through `pypdfium2` | Validating PDFs and rendering their pages |
+| Tesseract, `pytesseract`, and Pillow | OCR and image preprocessing |
+| Pydantic | Validating structured records and checkpoints |
+| SQLite and `filelock` | Saving progress and keeping one worker in a state directory |
+| `psutil` | Cleaning up the processing process and its children |
+| FastAPI, Uvicorn, and `python-multipart` | Running the supplied portal |
 
-Inside the UI, choose **Fax Management → Inbound Faxes → fax row**. You can preview, **Download Fax PDF**, and later **Route / Assign Fax**. After entering **Assigned To**, **Document Type**, and **Document Folder**, choose **Review Routing → OK - Submit Routing**.
+The pinned dependencies are in `pyproject.toml`.
+`requirements-worker.txt` includes the hash-locked Python dependencies for the worker, portal, and checks.
+`uv.lock` is also included.
 
-The inbox displays **six transmissions per page**. It does **not** display document classifications or extracted content. Downloaded PDFs have **no searchable text layer**: the content is embedded in scanned images, so actual OCR/vision is required.
+## Results and resume
 
-## Your end-to-end workflow
+`examples/results.json` is a sample from a completed Docker run.
+On a fresh sandbox, the result is seven ordinary routes, three manual-review routes, one skipped duplicate, and one already-routed fax.
 
-Build a separate automation program that completes the flow for the queue:
+Each fax result includes its ID, page-by-page OCR text, classification evidence, visible source and patient identifiers, flags, uncertainties, selected and observed routing values, and recovery history.
+Missing identifiers stay missing.
 
-1. Launch an **authenticated browser session A**. Use the portal navigation to open Inbound Faxes, inspect a fax, and download its PDF through the **Download Fax PDF** button. Record the stable fax ID shown on the page.
-2. OCR or visually interpret **all pages of the downloaded PDF**. Extract an evidence-backed document classification, reference/identifier where available, patient name/date of birth where visible, and operational flags (e.g., urgent, unclear, mixed packet, possible resend). You may use a local OCR engine or a vision model. Do not infer missing values.
-3. Make an explicit routing decision using the rules below. If uncertain, prefer the **Needs Review** route. If the document is a confirmed duplicate or is already routed, **do not submit a new route**.
-4. Launch a **new, separate authenticated browser session B** **after the download**. Log in again. Use the UI to navigate and locate **the same fax ID** (not simply the same sender or date). Choose **Route / Assign Fax**, populate all three dropdowns, click **Review Routing**, then **OK - Submit Routing**.
-5. Verify the saved result using the browser UI (fax status or Routed Documents). Persist your result so the worker can resume without duplicate actions if interrupted. Repeat for the remaining faxes.
+A skipped duplicate stays New in the portal because there is no control for dismissing it as a duplicate.
+The JSON records `skipped_duplicate` and the fax ID of the matching completed assignment.
 
-**Important:** Session B must be a distinct login/browser context created after session A has downloaded the fax. Opening another tab in the same browser context does not count. The sandbox enforces this in the route submission path.
+To resume after a failure or interruption, run the same command with the same state directory.
+Keep the checkpoints so the worker can reconcile an interrupted submit with the UI.
+Faxes still shown as New are downloaded again; byte-identical PDFs can reuse saved OCR.
+Use a different state directory for a different portal URL or account.
 
-## Routing SOP
+## Timeouts and exit codes
 
-The UI deliberately does not make a routing decision for you. Determine the document type from the scanned packet and apply the following table. Select the exact values shown.
+The whole-run deadline defaults to 900 seconds.
+It covers processing in the worker, including downloads and native PDF/OCR work.
+A separate supervisor stops the processing process and its children when that budget runs out.
 
-| Document content | Assigned To | Document Type | Document Folder |
-|---|---|---|---|
-| New patient referral / specialist consult request | Olivia Chen - Referrals | Referral | Referrals / New |
-| Routine laboratory result | Noah Patel - Clinical Review | Lab Result | Clinical / Labs |
-| Imaging / radiology report | Noah Patel - Clinical Review | Imaging Report | Clinical / Imaging |
-| Request for prior authorization / coverage documentation | Ethan Brooks - Authorizations | Prior Authorization | Authorizations / Pending |
-| Pharmacy prescription refill request | Ava Wilson - Nursing / Medication | Refill Request | Nursing / Medication |
-| Request for release / copy of medical records | Mia Gomez - Medical Records | Records Request | Records / Requests |
-| Explanation of Benefits / insurer remittance (EOB) | Liam Rivera - Billing | EOB | Billing / EOBs |
-| Urgent/critical flag, mixed categories in one packet, unreadable/missing pages, or unclear classification | Jordan Ellis - Manual Review | Needs Review | Review / Unclassified |
+For a shorter native run:
 
-**Safety & duplicate rules:**
-
-- **Do not make any clinical interpretation, diagnosis, escalation call, or prescribing decision.** A document marked *critical* or *urgent* must be routed to **Manual Review**; include the flag in the routing note. This is a simulation of administrative routing, not patient care.
-- A packet containing **more than one document category** must go to **Manual Review** instead of silently filing it as one type.
-- A document without enough reliable OCR evidence for classification must go to **Manual Review**. Explain the uncertainty.
-- Before routing, check whether the fax is already **Routed** in the UI. Do not modify a routed fax.
-- Different fax IDs may contain a resend of the **same source document**. Use source document ID plus contextual evidence (not sender/time alone) to recognize confirmed resends. Route the **first instance only**; report the other fax as a skipped duplicate. If identity is uncertain, use review instead of an unsafe guess.
-
-## Runtime characteristics
-
-- There are **12 inbound fax transmissions**. Some are multi-page PDFs; some are similar by sender/time; some are rerouted already, duplicates, or exceptions.
-- All browser actions must go through the portal's UI. Do not connect directly to the SQLite DB, read seeded PDFs from `data/faxes`, or call `__admin` endpoints as your automation's input or output mechanism. The folder exists only to make the local portal run.
-- The available staff members, document types and folders are real UI dropdowns; your worker must select their correct values and **press OK**.
-- The portal enforces two authenticated sessions separated by the fax download. It rejects an attempt to route in the same login session.
-- Simulated failures are configurable; see below. Your worker should handle outcomes that are uncertain, not just explicit failures.
-- No real services, credentials, patient data, EMR, email or fax vendor API are needed.
-
-## Inject failures (optional while developing)
-
-Stop the server, reset if desired, and restart with one of these environment variables:
-
-```bash
-LINDA_FAULT_MODE=download_503_once uvicorn app:app --host 127.0.0.1 --port 8000
-LINDA_FAULT_MODE=session_expire_on_route_once uvicorn app:app --host 127.0.0.1 --port 8000
-LINDA_FAULT_MODE=route_commit_then_503_once uvicorn app:app --host 127.0.0.1 --port 8000
+```sh
+python -m linda_worker --url http://127.0.0.1:8000 --state-dir artifacts/run --deadline-seconds 120
 ```
 
-- `download_503_once` — one download fails transiently before a PDF is delivered.
-- `session_expire_on_route_once` — a routing session expires during the first submit.
-- `route_commit_then_503_once` — the first routing action **succeeds** but returns a `503` instead of a success page. The worker must **recheck the UI** before attempting any retry.
+For Docker, set `LINDA_DEADLINE_SECONDS=120` before the Compose command.
+After a deadline expires, `results.json` has `run_status: "timed_out"` and the last saved checkpoints.
+The next run checks the UI again before making another submit.
 
-For a fresh test state, stop the server and run:
+| Exit code | Meaning |
+|---|---|
+| `0` | All discovered faxes are accounted for and verified |
+| `1` | The run failed or has unresolved work |
+| `2` | Invalid CLI arguments, or another worker owns the state directory |
+| `124` | The processing deadline expired |
+| `130` | Interrupted by Ctrl-C or SIGTERM |
 
-```bash
-python reset_sandbox.py
+The defaults are three attempts per operation and a 10-second browser action timeout.
+Use `--attempts` and `--timeout-ms` to adjust those.
+
+## Run the checks
+
+With the local environment activated:
+
+```sh
+ruff check linda_worker tests
+ruff format --check linda_worker tests
+mypy linda_worker
+pytest --run-e2e -q
 ```
 
-This deletes only the local sandbox database; the synthetic scanned PDFs remain unchanged.
+The latest full Linux run passed 73 tests.
+The suite covers the full queue, OCR at four rotations, exact routing values, separate sessions, all three supplied fault modes, restart recovery, and an already-routed resend with a still-New original.
+It also covers stalled downloads, native parser stalls, deadline expiry after a submit, process cleanup, and SIGTERM.
 
-## What to submit
+For a shorter run, `pytest -q` skips the browser integration tests but still runs real OCR tests.
+The browser tests start their own temporary portals and check results through the UI.
 
-Include: your working automation code, setup steps and exact run command, dependency list, a sample result artifact (`results.json` or equivalent), a concise architecture/failure-mode note, and either tests or a repeatable demo/script showing normal and exception handling. Provide a short screen recording or screenshots only if they materially help a reviewer reproduce the browser workflow.
+After building the Docker image, you can run the full suite there too:
 
-A useful result for **each fax** should include its fax ID, OCR-derived classification and evidence/uncertainty, final action (`routed`, `needs_review`, `skipped_duplicate`, `already_routed`, or `failed`), selected values when routed, verification status, and error/recovery information. Do not fabricate a successful outcome from an HTTP response alone.
+```sh
+docker compose run --rm --no-deps worker python -m pytest --run-e2e -q
+```
 
-You may use external OCR/vision/AI tools as long as you disclose them and the reviewer can reproduce the relevant behavior. Prioritize correctness, safe routing, and demonstrable end-to-end execution over presentation polish.
+## Try the supplied faults
+
+To try a fault in Docker from a fresh portal state:
+
+```sh
+docker compose down --volumes
+LINDA_FAULT_MODE=route_commit_then_503_once docker compose up --abort-on-container-exit --exit-code-from worker
+```
+
+The other modes are `download_503_once` and `session_expire_on_route_once`.
+Each fault fires once per fresh portal database.
+This reset removes the portal volume; the worker's history stays in `artifacts/compose`.
+New faxes are downloaded again before routing, so keeping that history across a portal reset is supported.
+
+For a native portal, stop it, run `python reset_sandbox.py`, then restart it with the chosen `LINDA_FAULT_MODE` environment variable.
+
+The design decisions, failure handling, and limits are in [the engineering notes](ARCHITECTURE.md).
