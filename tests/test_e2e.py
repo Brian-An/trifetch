@@ -166,6 +166,57 @@ def test_portal_rejects_same_session_and_accepts_fresh_session(portal: str, tmp_
             browser.close()
 
 
+def test_already_routed_resend_prevents_routing_earlier_original(
+    portal: str, tmp_path: Path
+) -> None:
+    config = BrowserConfig(portal, "agent.demo", "demo-password-123")
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch()
+        try:
+            with Session(browser, config) as download:
+                download.authenticate()
+                download.open_fax("FX-210")
+                download.download(tmp_path / "resend.pdf")
+            with Session(browser, config) as routing:
+                routing.authenticate()
+                routing.open_fax("FX-210")
+                routing.prepare_route("FX-210", ROUTES["Referral"], "Referral received by staff.")
+                routing.submit()
+                original, _ = routing.open_fax("FX-201")
+                assert original.status == "New"
+                _, saved = routing.open_fax("FX-210")
+                assert saved == ROUTES["Referral"]
+        finally:
+            browser.close()
+
+    directory = tmp_path / "worker"
+    for records in (run_worker(portal, directory), run_worker(portal, directory)):
+        by_id = {r.fax.fax_id: r for r in records}
+        assert by_id["FX-201"].action == "skipped_duplicate"
+        assert by_id["FX-201"].duplicate_of == "FX-210"
+        assert by_id["FX-201"].submit_attempts == 0
+        assert by_id["FX-210"].action == "already_routed"
+        assert by_id["FX-210"].submit_attempts == 0
+        assert all(record.verification == "verified" for record in records)
+
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch()
+        try:
+            with Session(browser, config) as verification:
+                verification.authenticate()
+                original, observed = verification.open_fax("FX-201")
+                assert original.status == "New" and observed is None
+                _, observed = verification.open_fax("FX-210")
+                assert observed == saved
+                verification.page.get_by_role("complementary").get_by_role(
+                    "link", name="Routed Documents", exact=True
+                ).click()
+                table = verification.page.get_by_role("table", name="Routed documents", exact=True)
+                assert table.locator("tbody tr").count() == 11
+        finally:
+            browser.close()
+
+
 def test_html_attachment_is_rejected_then_recovered(
     portal: str, tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:

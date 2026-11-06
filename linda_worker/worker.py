@@ -256,6 +256,7 @@ class Worker:
                     for record in self.records:
                         complete = self.ingest(browser, record, engine) and complete
                     duplicates, reviews = duplicate_plan(self.records)
+                    by_id = {r.fax.fax_id: r for r in self.records}
                     try:
                         ordered = sorted(self.records, key=received_key)
                     except (ValueError, TypeError):
@@ -266,8 +267,12 @@ class Worker:
                                 for r in self.records
                             }
                         )
-                        duplicates = {}
-                    by_id = {r.fax.fax_id: r for r in self.records}
+                        duplicates = {
+                            fax_id: matched_id
+                            for fax_id, matched_id in duplicates.items()
+                            if by_id[matched_id].observed is not None
+                            and by_id[matched_id].verification == "verified"
+                        }
                     for record in ordered:
                         if record.observed is not None:
                             continue
@@ -284,19 +289,16 @@ class Worker:
                         extraction = record.extraction
                         assert extraction is not None
                         extra = reviews.get(record.fax.fax_id)
-                        original_id = duplicates.get(record.fax.fax_id)
-                        if extraction.resend_evidence and not original_id:
+                        matched_id = duplicates.get(record.fax.fax_id)
+                        if extraction.resend_evidence and not matched_id:
                             extra = (
                                 extra or "Possible resend without a confirmed matching original."
                             )
                         record.duplicate_of = None
-                        if original_id:
-                            original = by_id[original_id]
-                            # A resend is skipped only after its original has a UI-verified route.
-                            if (
-                                original.verification == "verified"
-                                and original.observed is not None
-                            ):
+                        if matched_id:
+                            matched = by_id[matched_id]
+                            # A matching transmission is skipped only for a UI-verified saved route.
+                            if matched.verification == "verified" and matched.observed is not None:
                                 outcome = self.verify(browser, record)
                                 if outcome == "routed":
                                     continue
@@ -305,21 +307,21 @@ class Worker:
                                     record.verification = "failed"
                                     self.save(record)
                                     continue
-                                record.duplicate_of = original_id
+                                record.duplicate_of = matched_id
                                 record.action = "skipped_duplicate"
                                 record.selected = None
+                                record.routing_note = None
+                                record.submission_pending = False
                                 record.verification = "verified"
                                 record.verified_at = timestamp()
                                 record.event(
                                     "duplicate",
                                     "Matching source ID, patient name, DOB and "
-                                    f"category; earliest original {original_id} verified routed.",
+                                    f"category; matching fax {matched_id} verified routed.",
                                 )
                                 self.save(record)
                                 continue
-                            extra = (
-                                f"Possible resend of {original_id}; original routing is unverified."
-                            )
+                            extra = f"Matching fax {matched_id} has no verified completed route."
                         planned = ROUTES["Needs Review" if extra else extraction.classification]
                         self.route(browser, record, planned, routing_note(extraction, extra))
                         log.info(

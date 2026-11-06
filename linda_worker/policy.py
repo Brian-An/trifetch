@@ -235,6 +235,20 @@ def duplicate_plan(records: list[Record]) -> tuple[dict[str, str], dict[str, str
                     "Source ID repeats without matching reliable patient context."
                 )
             continue
+        completed = [
+            record
+            for record in group
+            if record.fax.status == "Routed"
+            and record.observed is not None
+            and record.verification == "verified"
+        ]
+        if completed:
+            # Completed work takes precedence over chronology, including a later resend.
+            anchor = min(completed, key=lambda record: record.fax.fax_id)
+            for record in group:
+                if record.fax.status == "New":
+                    duplicates[record.fax.fax_id] = anchor.fax.fax_id
+            continue
         try:
             ordered = sorted(group, key=received_key)
             earliest_time = received_key(ordered[0])[0]

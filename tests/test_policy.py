@@ -117,6 +117,23 @@ def test_duplicate_matching_uses_document_identity_and_earliest_received() -> No
     assert reviews == {}
 
 
+@pytest.mark.parametrize("received_at", ["2026-11-03 08:10", "2026-11-03 08:00", "unknown"])
+def test_verified_completed_route_takes_precedence_over_chronology(received_at: str) -> None:
+    original = record("ORIGINAL", "2026-11-03 08:00")
+    resend = record("RESEND", received_at)
+    resend.fax.status = "Routed"
+    resend.observed = ROUTES["Referral"]
+    resend.verification = "verified"
+    assert duplicate_plan([original, resend]) == ({"ORIGINAL": "RESEND"}, {})
+
+
+def test_routed_status_without_verified_saved_values_cannot_confirm_duplicate() -> None:
+    original = record("ORIGINAL", "2026-11-03 08:00")
+    resend = record("RESEND", "2026-11-03 08:10")
+    resend.fax.status = "Routed"
+    assert "ORIGINAL" not in duplicate_plan([original, resend])[0]
+
+
 @pytest.mark.parametrize("change", ["patient", "dob", "time", "missing", "urgent"])
 def test_unsafe_duplicate_identity_requires_review(change: str) -> None:
     original = record("A", "2026-11-03 08:00")
