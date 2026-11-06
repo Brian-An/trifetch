@@ -1,7 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-06T02:30:24.546689+00:00",
+  "generated_at": "2026-11-06T21:37:45.930970+00:00",
   "run_status": "complete",
+  "run_error": null,
   "summary": {
     "needs_review": 3,
     "already_routed": 1,
@@ -27,7 +28,7 @@
       },
       "pdf_path": "downloads/db2104a62aec94527d7c268b.pdf",
       "pdf_sha256": "38773f9acc30d67ab6aac62f42b3799534c45cfeb76fd426fff77575c5e4bbcb",
-      "downloaded_at": "2026-11-06T02:30:05.828567+00:00",
+      "downloaded_at": "2026-11-06T21:37:28.776257+00:00",
       "extraction": {
         "engine": "Tesseract 5.3.0; English; policy v1",
         "pages": [
@@ -278,37 +279,37 @@
       },
       "duplicate_of": null,
       "verification": "verified",
-      "verified_at": "2026-11-06T02:30:24.517497+00:00",
+      "verified_at": "2026-11-06T21:37:45.906947+00:00",
       "submission_pending": false,
       "submit_attempts": 1,
       "errors": [],
       "events": [
         {
-          "at": "2026-11-06T02:30:05.828552+00:00",
+          "at": "2026-11-06T21:37:28.776246+00:00",
           "stage": "downloaded",
           "detail": "Downloaded and validated PDF through the UI.",
-          "context_id": "1228fffa2f044cad8695fb3abde0d8fc"
+          "context_id": "0824fe03f3c8455dba23b91e280f8846"
         },
         {
-          "at": "2026-11-06T02:30:23.908265+00:00",
+          "at": "2026-11-06T21:37:45.427276+00:00",
           "stage": "reconciled",
           "detail": "Fresh UI inspection shows New; safe to prepare a route.",
-          "context_id": "fa4e71c145b745218440ce566d674410"
+          "context_id": "b733364d14cd4513887736ae2f0e8dd9"
         },
         {
-          "at": "2026-11-06T02:30:24.048659+00:00",
+          "at": "2026-11-06T21:37:45.521890+00:00",
           "stage": "submit_intent",
           "detail": "Confirmed exact fax ID and three dropdown values.",
-          "context_id": "fa4e71c145b745218440ce566d674410"
+          "context_id": "b733364d14cd4513887736ae2f0e8dd9"
         },
         {
-          "at": "2026-11-06T02:30:24.128666+00:00",
+          "at": "2026-11-06T21:37:45.595913+00:00",
           "stage": "submit_returned",
           "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
           "context_id": null
         },
         {
-          "at": "2026-11-06T02:30:24.517508+00:00",
+          "at": "2026-11-06T21:37:45.906958+00:00",
           "stage": "verified",
           "detail": "Read completed assignment and all three saved values in the UI.",
           "context_id": null
@@ -333,7 +334,7 @@
       },
       "pdf_path": "downloads/60b99cf1941b061f8e4f36cb.pdf",
       "pdf_sha256": "83838a6b6580e6d70d9abe889f2dfe97e7ca77fe3414b3721530c53460e90cdc",
-      "downloaded_at": "2026-11-06T02:30:07.268559+00:00",
+      "downloaded_at": "2026-11-06T21:37:29.920561+00:00",
       "extraction": {
         "engine": "Tesseract 5.3.0; English; policy v1",
         "pages": [
@@ -445,22 +446,22 @@
       },
       "duplicate_of": null,
       "verification": "verified",
-      "verified_at": "2026-11-06T02:30:07.243958+00:00",
+      "verified_at": "2026-11-06T21:37:29.894739+00:00",
       "submission_pending": false,
       "submit_attempts": 0,
       "errors": [],
       "events": [
         {
-          "at": "2026-11-06T02:30:07.243978+00:00",
+          "at": "2026-11-06T21:37:29.894751+00:00",
           "stage": "verified",
           "detail": "Read completed assignment and all three saved values in the UI.",
           "context_id": null
         },
         {
-          "at": "2026-11-06T02:30:07.268546+00:00",
+          "at": "2026-11-06T21:37:29.920553+00:00",
           "stage": "downloaded",
           "detail": "Downloaded and validated PDF through the UI.",
-          "context_id": "2d2c64d5b0ed46b88c87d7ee23a0919a"
+          "context_id": "d32cb1eada354403b6bf3939dac951cd"
         }
       ]
     },
@@ -482,7 +483,7 @@
       },
       "pdf_path": "downloads/5f46808e2a0f1af8e5ccdc65.pdf",
       "pdf_sha256": "4f74c305a578dce2d44fced440e8eda3f95c3405681ed260fe3ad9b65c75ab4e",
-      "downloaded_at": "2026-11-06T02:30:07.918740+00:00",
+      "downloaded_at": "2026-11-06T21:37:30.555664+00:00",
       "extraction": {
         "engine": "Tesseract 5.3.0; English; policy v1",
         "pages": [
@@ -611,27 +612,27 @@
       "observed": null,
       "duplicate_of": "FX-201",
       "verification": "verified",
-      "verified_at": "2026-11-06T02:30:23.573927+00:00",
+      "verified_at": "2026-11-06T21:37:45.093103+00:00",
       "submission_pending": false,
       "submit_attempts": 0,
       "errors": [],
       "events": [
         {
-          "at": "2026-11-06T02:30:07.918730+00:00",
+          "at": "2026-11-06T21:37:30.555654+00:00",
           "stage": "downloaded",
           "detail": "Downloaded and validated PDF through the UI.",
-          "context_id": "445d87349a894f78a3dde905838961fe"
+          "context_id": "b9f23ba9939e4159a9e24399f4750934"
         },
         {
-          "at": "2026-11-06T02:30:23.568559+00:00",
+          "at": "2026-11-06T21:37:45.087972+00:00",
           "stage": "reconciled",
           "detail": "Fresh UI inspection shows no completed route.",
           "context_id": null
         },
         {
-          "at": "2026-11-06T02:30:23.573941+00:00",
+          "at": "2026-11-06T21:37:45.093116+00:00",
           "stage": "duplicate",
-          "detail": "Matching source ID, patient name, DOB and category; earliest original FX-201 verified routed.",
+          "detail": "Matching source ID, patient name, DOB and category; matching fax FX-201 verified routed.",
           "context_id": null
         }
       ]
@@ -654,7 +655,7 @@
       },
       "pdf_path": "downloads/a54e6609d1f7911f2ebf3377.pdf",
       "pdf_sha256": "587f25e225a1fce32d1f02205c969752e3b88f1adc15a4f6b2a1267c411e3d88",
-      "downloaded_at": "2026-11-06T02:30:08.621131+00:00",
+      "downloaded_at": "2026-11-06T21:37:31.204720+00:00",
       "extraction": {
         "engine": "Tesseract 5.3.0; English; policy v1",
         "pages": [
@@ -737,37 +738,37 @@
       },
       "duplicate_of": null,
       "verification": "verified",
-      "verified_at": "2026-11-06T02:30:23.236154+00:00",
+      "verified_at": "2026-11-06T21:37:44.751561+00:00",
       "submission_pending": false,
       "submit_attempts": 1,
       "errors": [],
       "events": [
         {
-          "at": "2026-11-06T02:30:08.621120+00:00",
+          "at": "2026-11-06T21:37:31.204708+00:00",
           "stage": "downloaded",
           "detail": "Downloaded and validated PDF through the UI.",
-          "context_id": "1ef958f841d14870bbe4476e63d275dd"
+          "context_id": "0c8a15fa5ab14787944a17680cbb66f0"
         },
         {
-          "at": "2026-11-06T02:30:22.752213+00:00",
+          "at": "2026-11-06T21:37:44.239144+00:00",
           "stage": "reconciled",
           "detail": "Fresh UI inspection shows New; safe to prepare a route.",
-          "context_id": "867524c774a2462c9a818f76832aa840"
+          "context_id": "342eca2c82ac40b982f4055633cf0e71"
         },
         {
-          "at": "2026-11-06T02:30:22.847042+00:00",
+          "at": "2026-11-06T21:37:44.341117+00:00",
           "stage": "submit_intent",
           "detail": "Confirmed exact fax ID and three dropdown values.",
-          "context_id": "867524c774a2462c9a818f76832aa840"
+          "context_id": "342eca2c82ac40b982f4055633cf0e71"
         },
         {
-          "at": "2026-11-06T02:30:22.908476+00:00",
+          "at": "2026-11-06T21:37:44.410277+00:00",
           "stage": "submit_returned",
           "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
           "context_id": null
         },
         {
-          "at": "2026-11-06T02:30:23.236169+00:00",
+          "at": "2026-11-06T21:37:44.751571+00:00",
           "stage": "verified",
           "detail": "Read completed assignment and all three saved values in the UI.",
           "context_id": null
@@ -792,7 +793,7 @@
       },
       "pdf_path": "downloads/c321e14666d66eb3e11b936d.pdf",
       "pdf_sha256": "4678dd0bb54f64d50a90220d2602cfca4a4f81b74e58485bda445fa5caa98fc0",
-      "downloaded_at": "2026-11-06T02:30:09.324401+00:00",
+      "downloaded_at": "2026-11-06T21:37:31.837818+00:00",
       "extraction": {
         "engine": "Tesseract 5.3.0; English; policy v1",
         "pages": [
@@ -916,37 +917,37 @@
       },
       "duplicate_of": null,
       "verification": "verified",
-      "verified_at": "2026-11-06T02:30:22.439465+00:00",
+      "verified_at": "2026-11-06T21:37:43.907798+00:00",
       "submission_pending": false,
       "submit_attempts": 1,
       "errors": [],
       "events": [
         {
-          "at": "2026-11-06T02:30:09.324381+00:00",
+          "at": "2026-11-06T21:37:31.837808+00:00",
           "stage": "downloaded",
           "detail": "Downloaded and validated PDF through the UI.",
-          "context_id": "80d33a9a35204b0097a8d9bfe7230a6f"
+          "context_id": "6ab52c88180249159d5f5d3ae414641b"
         },
         {
-          "at": "2026-11-06T02:30:21.936157+00:00",
+          "at": "2026-11-06T21:37:43.423309+00:00",
           "stage": "reconciled",
           "detail": "Fresh UI inspection shows New; safe to prepare a route.",
-          "context_id": "8fe37a5f0b194af2b202531507bcac37"
+          "context_id": "e166cd7903e54b0cae46c9944fc16a61"
         },
         {
-          "at": "2026-11-06T02:30:22.030815+00:00",
+          "at": "2026-11-06T21:37:43.517936+00:00",
           "stage": "submit_intent",
           "detail": "Confirmed exact fax ID and three dropdown values.",
-          "context_id": "8fe37a5f0b194af2b202531507bcac37"
+          "context_id": "e166cd7903e54b0cae46c9944fc16a61"
         },
         {
-          "at": "2026-11-06T02:30:22.107090+00:00",
+          "at": "2026-11-06T21:37:43.581718+00:00",
           "stage": "submit_returned",
           "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
           "context_id": null
         },
         {
-          "at": "2026-11-06T02:30:22.439475+00:00",
+          "at": "2026-11-06T21:37:43.907809+00:00",
           "stage": "verified",
           "detail": "Read completed assignment and all three saved values in the UI.",
           "context_id": null
@@ -971,7 +972,7 @@
       },
       "pdf_path": "downloads/ae04a427024c0b9b234586ff.pdf",
       "pdf_sha256": "c8c9944ada8c5582dcfdf79373b5ac773d1812db29f50f518be4265f0ac59b32",
-      "downloaded_at": "2026-11-06T02:30:10.033113+00:00",
+      "downloaded_at": "2026-11-06T21:37:32.487785+00:00",
       "extraction": {
         "engine": "Tesseract 5.3.0; English; policy v1",
         "pages": [
@@ -1088,37 +1089,37 @@
       },
       "duplicate_of": null,
       "verification": "verified",
-      "verified_at": "2026-11-06T02:30:21.603469+00:00",
+      "verified_at": "2026-11-06T21:37:43.073898+00:00",
       "submission_pending": false,
       "submit_attempts": 1,
       "errors": [],
       "events": [
         {
-          "at": "2026-11-06T02:30:10.033101+00:00",
+          "at": "2026-11-06T21:37:32.487776+00:00",
           "stage": "downloaded",
           "detail": "Downloaded and validated PDF through the UI.",
-          "context_id": "1514172a23eb4ab3b9c04130cd509274"
+          "context_id": "b0e9053f200547328cae7830df3da26a"
         },
         {
-          "at": "2026-11-06T02:30:21.120334+00:00",
+          "at": "2026-11-06T21:37:42.589864+00:00",
           "stage": "reconciled",
           "detail": "Fresh UI inspection shows New; safe to prepare a route.",
-          "context_id": "4db94f069eec4c50967d3adf5808932e"
+          "context_id": "3ef098cc4fdb44ca8c7fe9cf3d4de03e"
         },
         {
-          "at": "2026-11-06T02:30:21.213442+00:00",
+          "at": "2026-11-06T21:37:42.688308+00:00",
           "stage": "submit_intent",
           "detail": "Confirmed exact fax ID and three dropdown values.",
-          "context_id": "4db94f069eec4c50967d3adf5808932e"
+          "context_id": "3ef098cc4fdb44ca8c7fe9cf3d4de03e"
         },
         {
-          "at": "2026-11-06T02:30:21.275007+00:00",
+          "at": "2026-11-06T21:37:42.746271+00:00",
           "stage": "submit_returned",
           "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
           "context_id": null
         },
         {
-          "at": "2026-11-06T02:30:21.603481+00:00",
+          "at": "2026-11-06T21:37:43.073912+00:00",
           "stage": "verified",
           "detail": "Read completed assignment and all three saved values in the UI.",
           "context_id": null
@@ -1143,7 +1144,7 @@
       },
       "pdf_path": "downloads/f19c77d49e1a47ff0ab3abab.pdf",
       "pdf_sha256": "44b68d8fcf367def23745addd79d26d47c17e930f4b5a496feb2d0a4aef0f958",
-      "downloaded_at": "2026-11-06T02:30:10.789174+00:00",
+      "downloaded_at": "2026-11-06T21:37:33.105207+00:00",
       "extraction": {
         "engine": "Tesseract 5.3.0; English; policy v1",
         "pages": [
@@ -1334,37 +1335,37 @@
       },
       "duplicate_of": null,
       "verification": "verified",
-      "verified_at": "2026-11-06T02:30:20.788082+00:00",
+      "verified_at": "2026-11-06T21:37:42.245716+00:00",
       "submission_pending": false,
       "submit_attempts": 1,
       "errors": [],
       "events": [
         {
-          "at": "2026-11-06T02:30:10.789162+00:00",
+          "at": "2026-11-06T21:37:33.105198+00:00",
           "stage": "downloaded",
           "detail": "Downloaded and validated PDF through the UI.",
-          "context_id": "3b152ddfb40848c9b052c27e0f9145b3"
+          "context_id": "1d9065189b7243e7a1722ace9676f15b"
         },
         {
-          "at": "2026-11-06T02:30:20.306098+00:00",
+          "at": "2026-11-06T21:37:41.760455+00:00",
           "stage": "reconciled",
           "detail": "Fresh UI inspection shows New; safe to prepare a route.",
-          "context_id": "7263fb0f570649b39a9fb542e69e3e29"
+          "context_id": "bd63b0395e6b469381b05693292cf532"
         },
         {
-          "at": "2026-11-06T02:30:20.400284+00:00",
+          "at": "2026-11-06T21:37:41.853767+00:00",
           "stage": "submit_intent",
           "detail": "Confirmed exact fax ID and three dropdown values.",
-          "context_id": "7263fb0f570649b39a9fb542e69e3e29"
+          "context_id": "bd63b0395e6b469381b05693292cf532"
         },
         {
-          "at": "2026-11-06T02:30:20.474832+00:00",
+          "at": "2026-11-06T21:37:41.911358+00:00",
           "stage": "submit_returned",
           "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
           "context_id": null
         },
         {
-          "at": "2026-11-06T02:30:20.788095+00:00",
+          "at": "2026-11-06T21:37:42.245726+00:00",
           "stage": "verified",
           "detail": "Read completed assignment and all three saved values in the UI.",
           "context_id": null
@@ -1389,7 +1390,7 @@
       },
       "pdf_path": "downloads/7ff1eb5cdea3fc4ed1d0922a.pdf",
       "pdf_sha256": "91819d99630c246be302e3100140612a53ebae691e137b31761c4804fbfe0cf0",
-      "downloaded_at": "2026-11-06T02:30:11.972113+00:00",
+      "downloaded_at": "2026-11-06T21:37:34.022282+00:00",
       "extraction": {
         "engine": "Tesseract 5.3.0; English; policy v1",
         "pages": [
@@ -1513,37 +1514,37 @@
       },
       "duplicate_of": null,
       "verification": "verified",
-      "verified_at": "2026-11-06T02:30:19.960134+00:00",
+      "verified_at": "2026-11-06T21:37:41.429226+00:00",
       "submission_pending": false,
       "submit_attempts": 1,
       "errors": [],
       "events": [
         {
-          "at": "2026-11-06T02:30:11.972100+00:00",
+          "at": "2026-11-06T21:37:34.022272+00:00",
           "stage": "downloaded",
           "detail": "Downloaded and validated PDF through the UI.",
-          "context_id": "50b4c613af7b48aca5762089739f4bba"
+          "context_id": "e8a151bc6b3b4b359b7f78dba7f6d066"
         },
         {
-          "at": "2026-11-06T02:30:19.472642+00:00",
+          "at": "2026-11-06T21:37:40.938555+00:00",
           "stage": "reconciled",
           "detail": "Fresh UI inspection shows New; safe to prepare a route.",
-          "context_id": "f4fa20b55dbe4f68ac71b4909a2275ab"
+          "context_id": "c243d493b3c1446099362fd807489b58"
         },
         {
-          "at": "2026-11-06T02:30:19.565106+00:00",
+          "at": "2026-11-06T21:37:41.038560+00:00",
           "stage": "submit_intent",
           "detail": "Confirmed exact fax ID and three dropdown values.",
-          "context_id": "f4fa20b55dbe4f68ac71b4909a2275ab"
+          "context_id": "c243d493b3c1446099362fd807489b58"
         },
         {
-          "at": "2026-11-06T02:30:19.626409+00:00",
+          "at": "2026-11-06T21:37:41.095494+00:00",
           "stage": "submit_returned",
           "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
           "context_id": null
         },
         {
-          "at": "2026-11-06T02:30:19.960181+00:00",
+          "at": "2026-11-06T21:37:41.429237+00:00",
           "stage": "verified",
           "detail": "Read completed assignment and all three saved values in the UI.",
           "context_id": null
@@ -1568,7 +1569,7 @@
       },
       "pdf_path": "downloads/8730915549d9d194a4a19588.pdf",
       "pdf_sha256": "201436548e34065cc195238547b3c30bb9b759c47cbc106a9bc1a654268766ba",
-      "downloaded_at": "2026-11-06T02:30:12.725837+00:00",
+      "downloaded_at": "2026-11-06T21:37:34.688658+00:00",
       "extraction": {
         "engine": "Tesseract 5.3.0; English; policy v1",
         "pages": [
@@ -1692,37 +1693,37 @@
       },
       "duplicate_of": null,
       "verification": "verified",
-      "verified_at": "2026-11-06T02:30:19.143190+00:00",
+      "verified_at": "2026-11-06T21:37:40.608344+00:00",
       "submission_pending": false,
       "submit_attempts": 1,
       "errors": [],
       "events": [
         {
-          "at": "2026-11-06T02:30:12.725821+00:00",
+          "at": "2026-11-06T21:37:34.688646+00:00",
           "stage": "downloaded",
           "detail": "Downloaded and validated PDF through the UI.",
-          "context_id": "f9eb2f7d60ba4f95826a581e66c21968"
+          "context_id": "594b0663aa6e42a0a3b61f6fbeb2f3ac"
         },
         {
-          "at": "2026-11-06T02:30:18.606210+00:00",
+          "at": "2026-11-06T21:37:40.105196+00:00",
           "stage": "reconciled",
           "detail": "Fresh UI inspection shows New; safe to prepare a route.",
-          "context_id": "8fb172353fe243a5b2b398e510c58dfb"
+          "context_id": "78e6555693cc4d289e90ad05cef4b06e"
         },
         {
-          "at": "2026-11-06T02:30:18.720842+00:00",
+          "at": "2026-11-06T21:37:40.207165+00:00",
           "stage": "submit_intent",
           "detail": "Confirmed exact fax ID and three dropdown values.",
-          "context_id": "8fb172353fe243a5b2b398e510c58dfb"
+          "context_id": "78e6555693cc4d289e90ad05cef4b06e"
         },
         {
-          "at": "2026-11-06T02:30:18.791831+00:00",
+          "at": "2026-11-06T21:37:40.279929+00:00",
           "stage": "submit_returned",
           "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
           "context_id": null
         },
         {
-          "at": "2026-11-06T02:30:19.143200+00:00",
+          "at": "2026-11-06T21:37:40.608357+00:00",
           "stage": "verified",
           "detail": "Read completed assignment and all three saved values in the UI.",
           "context_id": null
@@ -1747,7 +1748,7 @@
       },
       "pdf_path": "downloads/5f8c9c30890ebb90cd8cba91.pdf",
       "pdf_sha256": "ab215f8f481801f254bc5f983145ee848d42123c728024ce1354f376c3da4ded",
-      "downloaded_at": "2026-11-06T02:30:13.434228+00:00",
+      "downloaded_at": "2026-11-06T21:37:35.338436+00:00",
       "extraction": {
         "engine": "Tesseract 5.3.0; English; policy v1",
         "pages": [
@@ -1877,37 +1878,37 @@
       },
       "duplicate_of": null,
       "verification": "verified",
-      "verified_at": "2026-11-06T02:30:18.254196+00:00",
+      "verified_at": "2026-11-06T21:37:39.776879+00:00",
       "submission_pending": false,
       "submit_attempts": 1,
       "errors": [],
       "events": [
         {
-          "at": "2026-11-06T02:30:13.434218+00:00",
+          "at": "2026-11-06T21:37:35.338426+00:00",
           "stage": "downloaded",
           "detail": "Downloaded and validated PDF through the UI.",
-          "context_id": "a477b41e2dc3492a823e2105eb870111"
+          "context_id": "751fa5429e124fc1bd82f562ba88c99f"
         },
         {
-          "at": "2026-11-06T02:30:17.776030+00:00",
+          "at": "2026-11-06T21:37:39.290991+00:00",
           "stage": "reconciled",
           "detail": "Fresh UI inspection shows New; safe to prepare a route.",
-          "context_id": "6e7b9837160749b38c369bb118d15668"
+          "context_id": "0eab462616834f069712654e1c818b82"
         },
         {
-          "at": "2026-11-06T02:30:17.864856+00:00",
+          "at": "2026-11-06T21:37:39.384775+00:00",
           "stage": "submit_intent",
           "detail": "Confirmed exact fax ID and three dropdown values.",
-          "context_id": "6e7b9837160749b38c369bb118d15668"
+          "context_id": "0eab462616834f069712654e1c818b82"
         },
         {
-          "at": "2026-11-06T02:30:17.924026+00:00",
+          "at": "2026-11-06T21:37:39.443094+00:00",
           "stage": "submit_returned",
           "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
           "context_id": null
         },
         {
-          "at": "2026-11-06T02:30:18.254205+00:00",
+          "at": "2026-11-06T21:37:39.776889+00:00",
           "stage": "verified",
           "detail": "Read completed assignment and all three saved values in the UI.",
           "context_id": null
@@ -1932,7 +1933,7 @@
       },
       "pdf_path": "downloads/b259273bca3183ad0c1d5ddc.pdf",
       "pdf_sha256": "519e074e41a3bc3d89aba0eaa42e512bdad98db090992b48a89d2685edddf8cc",
-      "downloaded_at": "2026-11-06T02:30:14.154826+00:00",
+      "downloaded_at": "2026-11-06T21:37:35.988701+00:00",
       "extraction": {
         "engine": "Tesseract 5.3.0; English; policy v1",
         "pages": [
@@ -2063,37 +2064,37 @@
       },
       "duplicate_of": null,
       "verification": "verified",
-      "verified_at": "2026-11-06T02:30:17.438234+00:00",
+      "verified_at": "2026-11-06T21:37:38.959439+00:00",
       "submission_pending": false,
       "submit_attempts": 1,
       "errors": [],
       "events": [
         {
-          "at": "2026-11-06T02:30:14.154812+00:00",
+          "at": "2026-11-06T21:37:35.988691+00:00",
           "stage": "downloaded",
           "detail": "Downloaded and validated PDF through the UI.",
-          "context_id": "2c5b6e6ac0c2450791ed8de58b54507e"
+          "context_id": "36f91c05d748464ebebe3aac35cb473e"
         },
         {
-          "at": "2026-11-06T02:30:16.926850+00:00",
+          "at": "2026-11-06T21:37:38.456962+00:00",
           "stage": "reconciled",
           "detail": "Fresh UI inspection shows New; safe to prepare a route.",
-          "context_id": "d48ca60aff644ffd99861d145ef48b23"
+          "context_id": "8376fb4cd4f246b59a2e71104f54ce25"
         },
         {
-          "at": "2026-11-06T02:30:17.034812+00:00",
+          "at": "2026-11-06T21:37:38.553008+00:00",
           "stage": "submit_intent",
           "detail": "Confirmed exact fax ID and three dropdown values.",
-          "context_id": "d48ca60aff644ffd99861d145ef48b23"
+          "context_id": "8376fb4cd4f246b59a2e71104f54ce25"
         },
         {
-          "at": "2026-11-06T02:30:17.110369+00:00",
+          "at": "2026-11-06T21:37:38.612219+00:00",
           "stage": "submit_returned",
           "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
           "context_id": null
         },
         {
-          "at": "2026-11-06T02:30:17.438245+00:00",
+          "at": "2026-11-06T21:37:38.959450+00:00",
           "stage": "verified",
           "detail": "Read completed assignment and all three saved values in the UI.",
           "context_id": null
@@ -2118,7 +2119,7 @@
       },
       "pdf_path": "downloads/8b7d03f2c39f6fbb5fbd60c8.pdf",
       "pdf_sha256": "3e5d967db98e1c52d6dd7a83eaa50620e65ca51fa2bf1c9a622720e019e88a39",
-      "downloaded_at": "2026-11-06T02:30:14.926640+00:00",
+      "downloaded_at": "2026-11-06T21:37:36.704767+00:00",
       "extraction": {
         "engine": "Tesseract 5.3.0; English; policy v1",
         "pages": [
@@ -2295,37 +2296,37 @@
       },
       "duplicate_of": null,
       "verification": "verified",
-      "verified_at": "2026-11-06T02:30:16.554939+00:00",
+      "verified_at": "2026-11-06T21:37:38.107453+00:00",
       "submission_pending": false,
       "submit_attempts": 1,
       "errors": [],
       "events": [
         {
-          "at": "2026-11-06T02:30:14.926619+00:00",
+          "at": "2026-11-06T21:37:36.704757+00:00",
           "stage": "downloaded",
           "detail": "Downloaded and validated PDF through the UI.",
-          "context_id": "ea506132265a4c8c956df1fd47aea8ff"
+          "context_id": "9ae24502ce394729b25c2fba6ee248ab"
         },
         {
-          "at": "2026-11-06T02:30:15.991363+00:00",
+          "at": "2026-11-06T21:37:37.626964+00:00",
           "stage": "reconciled",
           "detail": "Fresh UI inspection shows New; safe to prepare a route.",
-          "context_id": "187dbbfdfd9f472eb12e50123fdaaf31"
+          "context_id": "be19acfe01004844b6e3ef861a2883a4"
         },
         {
-          "at": "2026-11-06T02:30:16.084943+00:00",
+          "at": "2026-11-06T21:37:37.718946+00:00",
           "stage": "submit_intent",
           "detail": "Confirmed exact fax ID and three dropdown values.",
-          "context_id": "187dbbfdfd9f472eb12e50123fdaaf31"
+          "context_id": "be19acfe01004844b6e3ef861a2883a4"
         },
         {
-          "at": "2026-11-06T02:30:16.158222+00:00",
+          "at": "2026-11-06T21:37:37.784555+00:00",
           "stage": "submit_returned",
           "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
           "context_id": null
         },
         {
-          "at": "2026-11-06T02:30:16.554952+00:00",
+          "at": "2026-11-06T21:37:38.107464+00:00",
           "stage": "verified",
           "detail": "Read completed assignment and all three saved values in the UI.",
           "context_id": null
