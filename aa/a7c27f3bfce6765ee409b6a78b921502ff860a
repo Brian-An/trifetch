@@ -1,0 +1,30 @@
+linda_worker/policy.py
+  s_2265064f6b02bd::t_8a28eef943baa1 239-242
+  s_2265064f6b02bd::t_f3c78bed36795a 238,243-251
+tests/test_policy.py
+  s_2265064f6b02bd::t_f3c78bed36795a 120-136
+linda_worker/worker.py
+  s_2265064f6b02bd::t_e5aa850b8d5421 271-272,301
+  s_2265064f6b02bd::t_cf721b4f924803 259,270,273-275,292-293,298,310,320
+  s_2265064f6b02bd::t_d258bde9f339ff 300
+  s_2265064f6b02bd::t_f3c78bed36795a 299,313-314
+  s_2265064f6b02bd::t_082fdbcdadadee 324
+tests/test_e2e.py
+  s_2265064f6b02bd::t_08914392c85f99 169-219
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "aaa7c27f3bfce6765ee409b6a78b921502ff860a",
+  "prompts": {},
+  "sessions": {
+    "s_2265064f6b02bd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1ae87-101b-79d1-8405-ae739873bf0d",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": null
+    }
+  }
+}
