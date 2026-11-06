@@ -1,0 +1,2336 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-06T02:30:24.546689+00:00",
+  "run_status": "complete",
+  "summary": {
+    "needs_review": 3,
+    "already_routed": 1,
+    "skipped_duplicate": 1,
+    "routed": 7
+  },
+  "faxes": [
+    {
+      "fax_id": "FX-212",
+      "fax": {
+        "fax_id": "FX-212",
+        "received_at": "2026-11-03 09:03",
+        "sender": "Central Care Associates",
+        "expected_pages": 3,
+        "status": "Routed"
+      },
+      "downloaded_fax": {
+        "fax_id": "FX-212",
+        "received_at": "2026-11-03 09:03",
+        "sender": "Central Care Associates",
+        "expected_pages": 3,
+        "status": "New"
+      },
+      "pdf_path": "downloads/db2104a62aec94527d7c268b.pdf",
+      "pdf_sha256": "38773f9acc30d67ab6aac62f42b3799534c45cfeb76fd426fff77575c5e4bbcb",
+      "downloaded_at": "2026-11-06T02:30:05.828567+00:00",
+      "extraction": {
+        "engine": "Tesseract 5.3.0; English; policy v1",
+        "pages": [
+          {
+            "number": 1,
+            "text": "CENTRAL CARE ASSOCIATES\nFAX TRANSMISSION / SCANNED DOCUMENT\nFAX COVER - MULTIPLE ENCLOSURES\nTransmission reference: PKT-4012\nPatient: Riley Morgan\nContains multiple documents with different purposes.\nPage 2: Laboratory result\nPage 3: Imaging interpretation\nPlease review entire packet before filing.\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-212 Page 1 of 3",
+            "confidence": 94.28579150751882,
+            "lines": [
+              {
+                "text": "CENTRAL CARE ASSOCIATES",
+                "confidence": 96.30101033333332
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 94.64851367741936
+              },
+              {
+                "text": "FAX COVER - MULTIPLE ENCLOSURES",
+                "confidence": 94.44106459259261
+              },
+              {
+                "text": "Transmission reference: PKT-4012",
+                "confidence": 93.41870413333332
+              },
+              {
+                "text": "Patient: Riley Morgan",
+                "confidence": 95.71182815789473
+              },
+              {
+                "text": "Contains multiple documents with different purposes.",
+                "confidence": 96.1846055744681
+              },
+              {
+                "text": "Page 2: Laboratory result",
+                "confidence": 96.1638530909091
+              },
+              {
+                "text": "Page 3: Imaging interpretation",
+                "confidence": 95.779872
+              },
+              {
+                "text": "Please review entire packet before filing.",
+                "confidence": 96.17660891891892
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 95.14092576315788
+              },
+              {
+                "text": "Transmission FX-212 Page 1 of 3",
+                "confidence": 82.28898492307692
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          },
+          {
+            "number": 2,
+            "text": "CENTRAL CARE ASSOCIATES\nFAX TRANSMISSION / SCANNED DOCUMENT\nLABORATORY REPORT\nDocument number: LAB-4012A\nPatient: Riley Morgan\nDOB: 03/18/1979\nPanel: Thyroid function\nFinal report, routine\nThis page is a laboratory result.\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-212 Page 2 of 3",
+            "confidence": 95.29112094502091,
+            "lines": [
+              {
+                "text": "CENTRAL CARE ASSOCIATES",
+                "confidence": 95.96320361904762
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 94.55188025806451
+              },
+              {
+                "text": "LABORATORY REPORT",
+                "confidence": 96.36280799999999
+              },
+              {
+                "text": "Document number: LAB-4012A",
+                "confidence": 93.78706870833332
+              },
+              {
+                "text": "Patient: Riley Morgan",
+                "confidence": 96.32288710526316
+              },
+              {
+                "text": "DOB: 03/18/1979",
+                "confidence": 95.91557314285714
+              },
+              {
+                "text": "Panel: Thyroid function",
+                "confidence": 96.47707342857143
+              },
+              {
+                "text": "Final report, routine",
+                "confidence": 96.67247652631579
+              },
+              {
+                "text": "This page is a laboratory result.",
+                "confidence": 96.32092796428572
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 95.00148713157894
+              },
+              {
+                "text": "Transmission FX-212 Page 2 of 3",
+                "confidence": 92.78028038461538
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          },
+          {
+            "number": 3,
+            "text": "CENTRAL CARE ASSOCIATES\nFAX TRANSMISSION / SCANNED DOCUMENT\nRADIOLOGY REPORT\nDocument number: IMG-4012B\nPatient: Riley Morgan\nDOB: 03/18/1979\nExam: Ultrasound thyroid\nImpression: Please see radiologist narrative.\nThis page is an imaging report.\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-212 Page 3 of 3",
+            "confidence": 95.01704084342566,
+            "lines": [
+              {
+                "text": "CENTRAL CARE ASSOCIATES",
+                "confidence": 96.25266866666668
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 94.28120219354838
+              },
+              {
+                "text": "RADIOLOGY REPORT",
+                "confidence": 96.17237099999998
+              },
+              {
+                "text": "Document number: IMG-4012B",
+                "confidence": 93.38456658333332
+              },
+              {
+                "text": "Patient: Riley Morgan",
+                "confidence": 95.91689231578948
+              },
+              {
+                "text": "DOB: 03/18/1979",
+                "confidence": 95.54836914285715
+              },
+              {
+                "text": "Exam: Ultrasound thyroid",
+                "confidence": 96.26678213636363
+              },
+              {
+                "text": "Impression: Please see radiologist narrative.",
+                "confidence": 96.08067197560975
+              },
+              {
+                "text": "This page is an imaging report.",
+                "confidence": 96.51510184615384
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 93.90678447368421
+              },
+              {
+                "text": "Transmission FX-212 Page 3 of 3",
+                "confidence": 92.33190665384616
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          }
+        ],
+        "classification": "Needs Review",
+        "categories": [
+          "Lab Result",
+          "Imaging Report"
+        ],
+        "evidence": [
+          {
+            "value": "Lab Result",
+            "page": 2,
+            "quote": "LABORATORY REPORT",
+            "confidence": 96.36280799999999
+          },
+          {
+            "value": "Imaging Report",
+            "page": 3,
+            "quote": "RADIOLOGY REPORT",
+            "confidence": 96.17237099999998
+          }
+        ],
+        "source_ids": [
+          {
+            "value": "LAB-4012A",
+            "page": 2,
+            "quote": "Document number: LAB-4012A",
+            "confidence": 93.78706870833332
+          },
+          {
+            "value": "IMG-4012B",
+            "page": 3,
+            "quote": "Document number: IMG-4012B",
+            "confidence": 93.38456658333332
+          }
+        ],
+        "patient_names": [
+          {
+            "value": "Riley Morgan",
+            "page": 1,
+            "quote": "Patient: Riley Morgan",
+            "confidence": 95.71182815789473
+          },
+          {
+            "value": "Riley Morgan",
+            "page": 2,
+            "quote": "Patient: Riley Morgan",
+            "confidence": 96.32288710526316
+          },
+          {
+            "value": "Riley Morgan",
+            "page": 3,
+            "quote": "Patient: Riley Morgan",
+            "confidence": 95.91689231578948
+          }
+        ],
+        "dates_of_birth": [
+          {
+            "value": "03/18/1979",
+            "page": 2,
+            "quote": "DOB: 03/18/1979",
+            "confidence": 95.91557314285714
+          },
+          {
+            "value": "03/18/1979",
+            "page": 3,
+            "quote": "DOB: 03/18/1979",
+            "confidence": 95.54836914285715
+          }
+        ],
+        "resend_evidence": [],
+        "flags": [],
+        "uncertainties": [
+          "Mixed packet: Lab Result, Imaging Report."
+        ]
+      },
+      "action": "needs_review",
+      "selected": {
+        "assigned_to": "Jordan Ellis - Manual Review",
+        "document_type": "Needs Review",
+        "document_folder": "Review / Unclassified"
+      },
+      "routing_note": "Mixed packet: Lab Result, Imaging Report.",
+      "observed": {
+        "assigned_to": "Jordan Ellis - Manual Review",
+        "document_type": "Needs Review",
+        "document_folder": "Review / Unclassified"
+      },
+      "duplicate_of": null,
+      "verification": "verified",
+      "verified_at": "2026-11-06T02:30:24.517497+00:00",
+      "submission_pending": false,
+      "submit_attempts": 1,
+      "errors": [],
+      "events": [
+        {
+          "at": "2026-11-06T02:30:05.828552+00:00",
+          "stage": "downloaded",
+          "detail": "Downloaded and validated PDF through the UI.",
+          "context_id": "1228fffa2f044cad8695fb3abde0d8fc"
+        },
+        {
+          "at": "2026-11-06T02:30:23.908265+00:00",
+          "stage": "reconciled",
+          "detail": "Fresh UI inspection shows New; safe to prepare a route.",
+          "context_id": "fa4e71c145b745218440ce566d674410"
+        },
+        {
+          "at": "2026-11-06T02:30:24.048659+00:00",
+          "stage": "submit_intent",
+          "detail": "Confirmed exact fax ID and three dropdown values.",
+          "context_id": "fa4e71c145b745218440ce566d674410"
+        },
+        {
+          "at": "2026-11-06T02:30:24.128666+00:00",
+          "stage": "submit_returned",
+          "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
+          "context_id": null
+        },
+        {
+          "at": "2026-11-06T02:30:24.517508+00:00",
+          "stage": "verified",
+          "detail": "Read completed assignment and all three saved values in the UI.",
+          "context_id": null
+        }
+      ]
+    },
+    {
+      "fax_id": "FX-211",
+      "fax": {
+        "fax_id": "FX-211",
+        "received_at": "2026-11-03 08:54",
+        "sender": "Northbridge Imaging",
+        "expected_pages": 1,
+        "status": "Routed"
+      },
+      "downloaded_fax": {
+        "fax_id": "FX-211",
+        "received_at": "2026-11-03 08:54",
+        "sender": "Northbridge Imaging",
+        "expected_pages": 1,
+        "status": "Routed"
+      },
+      "pdf_path": "downloads/60b99cf1941b061f8e4f36cb.pdf",
+      "pdf_sha256": "83838a6b6580e6d70d9abe889f2dfe97e7ca77fe3414b3721530c53460e90cdc",
+      "downloaded_at": "2026-11-06T02:30:07.268559+00:00",
+      "extraction": {
+        "engine": "Tesseract 5.3.0; English; policy v1",
+        "pages": [
+          {
+            "number": 1,
+            "text": "NORTHBRIDGE IMAGING\nFAX TRANSMISSION / SCANNED DOCUMENT\nFINAL IMAGING REPORT\nAccession: IMG-4111\nPatient: Elliot Brooks\nDOB: 07/18/1991\nExam: CT sinus without contrast\nReport status: Final\nImpression: Findings documented in full report.\nOrdering provider: Dr. D. Chen\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-211 Pagel ofl",
+            "confidence": 92.75934918016462,
+            "lines": [
+              {
+                "text": "NORTHBRIDGE IMAGING",
+                "confidence": 93.294213
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 95.08066119354838
+              },
+              {
+                "text": "FINAL IMAGING REPORT",
+                "confidence": 95.99801416666666
+              },
+              {
+                "text": "Accession: IMG-4111",
+                "confidence": 92.89520177777779
+              },
+              {
+                "text": "Patient: Elliot Brooks",
+                "confidence": 96.4668664
+              },
+              {
+                "text": "DOB: 07/18/1991",
+                "confidence": 96.64770642857142
+              },
+              {
+                "text": "Exam: CT sinus without contrast",
+                "confidence": 96.29302551851852
+              },
+              {
+                "text": "Report status: Final",
+                "confidence": 96.30822694444444
+              },
+              {
+                "text": "Impression: Findings documented in full report.",
+                "confidence": 96.4633486904762
+              },
+              {
+                "text": "Ordering provider: Dr. D. Chen",
+                "confidence": 95.57925961538461
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 94.83843076315789
+              },
+              {
+                "text": "Transmission FX-211 Pagel ofl",
+                "confidence": 64.30480407692308
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          }
+        ],
+        "classification": "Imaging Report",
+        "categories": [
+          "Imaging Report"
+        ],
+        "evidence": [
+          {
+            "value": "Imaging Report",
+            "page": 1,
+            "quote": "FINAL IMAGING REPORT",
+            "confidence": 95.99801416666666
+          }
+        ],
+        "source_ids": [
+          {
+            "value": "IMG-4111",
+            "page": 1,
+            "quote": "Accession: IMG-4111",
+            "confidence": 92.89520177777779
+          }
+        ],
+        "patient_names": [
+          {
+            "value": "Elliot Brooks",
+            "page": 1,
+            "quote": "Patient: Elliot Brooks",
+            "confidence": 96.4668664
+          }
+        ],
+        "dates_of_birth": [
+          {
+            "value": "07/18/1991",
+            "page": 1,
+            "quote": "DOB: 07/18/1991",
+            "confidence": 96.64770642857142
+          }
+        ],
+        "resend_evidence": [],
+        "flags": [],
+        "uncertainties": []
+      },
+      "action": "already_routed",
+      "selected": null,
+      "routing_note": null,
+      "observed": {
+        "assigned_to": "Noah Patel - Clinical Review",
+        "document_type": "Imaging Report",
+        "document_folder": "Clinical / Imaging"
+      },
+      "duplicate_of": null,
+      "verification": "verified",
+      "verified_at": "2026-11-06T02:30:07.243958+00:00",
+      "submission_pending": false,
+      "submit_attempts": 0,
+      "errors": [],
+      "events": [
+        {
+          "at": "2026-11-06T02:30:07.243978+00:00",
+          "stage": "verified",
+          "detail": "Read completed assignment and all three saved values in the UI.",
+          "context_id": null
+        },
+        {
+          "at": "2026-11-06T02:30:07.268546+00:00",
+          "stage": "downloaded",
+          "detail": "Downloaded and validated PDF through the UI.",
+          "context_id": "2d2c64d5b0ed46b88c87d7ee23a0919a"
+        }
+      ]
+    },
+    {
+      "fax_id": "FX-210",
+      "fax": {
+        "fax_id": "FX-210",
+        "received_at": "2026-11-03 08:49",
+        "sender": "Bayview Family Practice",
+        "expected_pages": 1,
+        "status": "New"
+      },
+      "downloaded_fax": {
+        "fax_id": "FX-210",
+        "received_at": "2026-11-03 08:49",
+        "sender": "Bayview Family Practice",
+        "expected_pages": 1,
+        "status": "New"
+      },
+      "pdf_path": "downloads/5f46808e2a0f1af8e5ccdc65.pdf",
+      "pdf_sha256": "4f74c305a578dce2d44fced440e8eda3f95c3405681ed260fe3ad9b65c75ab4e",
+      "downloaded_at": "2026-11-06T02:30:07.918740+00:00",
+      "extraction": {
+        "engine": "Tesseract 5.3.0; English; policy v1",
+        "pages": [
+          {
+            "number": 1,
+            "text": "BAYVIEW FAMILY PRACTICE\nFAX TRANSMISSION / SCANNED DOCUMENT\nFAX RESEND - REFERRAL REQUEST\nOriginal Document ID: RF-3001\nOriginal sent date: 11/03/2026\nPatient: Elena Hart\nDOB: 04/16/1987\nReferring physician: Dr. Mira Gomez\nRequested specialty: Neurology\nReason: Evaluation of recurrent headaches.\nPlease disregard if original was received.\nThis is a retransmission of the same referral.\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-210 Page 1of1",
+            "confidence": 93.51411811621806,
+            "lines": [
+              {
+                "text": "BAYVIEW FAMILY PRACTICE",
+                "confidence": 94.59611
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 94.00926632258064
+              },
+              {
+                "text": "FAX RESEND - REFERRAL REQUEST",
+                "confidence": 94.90170984000001
+              },
+              {
+                "text": "Original Document ID: RF-3001",
+                "confidence": 94.57985269230768
+              },
+              {
+                "text": "Original sent date: 11/03/2026",
+                "confidence": 96.34582518518518
+              },
+              {
+                "text": "Patient: Elena Hart",
+                "confidence": 96.15134282352942
+              },
+              {
+                "text": "DOB: 04/16/1987",
+                "confidence": 95.69068842857143
+              },
+              {
+                "text": "Referring physician: Dr. Mira Gomez",
+                "confidence": 96.34080893548388
+              },
+              {
+                "text": "Requested specialty: Neurology",
+                "confidence": 96.70184985714286
+              },
+              {
+                "text": "Reason: Evaluation of recurrent headaches.",
+                "confidence": 95.8868340263158
+              },
+              {
+                "text": "Please disregard if original was received.",
+                "confidence": 96.03721675675675
+              },
+              {
+                "text": "This is a retransmission of the same referral.",
+                "confidence": 96.25319723076923
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 94.45624326315789
+              },
+              {
+                "text": "Transmission FX-210 Page 1of1",
+                "confidence": 64.31319615384615
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          }
+        ],
+        "classification": "Referral",
+        "categories": [
+          "Referral"
+        ],
+        "evidence": [
+          {
+            "value": "Referral",
+            "page": 1,
+            "quote": "FAX RESEND - REFERRAL REQUEST",
+            "confidence": 94.90170984000001
+          }
+        ],
+        "source_ids": [
+          {
+            "value": "RF-3001",
+            "page": 1,
+            "quote": "Original Document ID: RF-3001",
+            "confidence": 94.57985269230768
+          }
+        ],
+        "patient_names": [
+          {
+            "value": "Elena Hart",
+            "page": 1,
+            "quote": "Patient: Elena Hart",
+            "confidence": 96.15134282352942
+          }
+        ],
+        "dates_of_birth": [
+          {
+            "value": "04/16/1987",
+            "page": 1,
+            "quote": "DOB: 04/16/1987",
+            "confidence": 95.69068842857143
+          }
+        ],
+        "resend_evidence": [
+          {
+            "value": "FAX RESEND - REFERRAL REQUEST",
+            "page": 1,
+            "quote": "FAX RESEND - REFERRAL REQUEST",
+            "confidence": 94.90170984000001
+          },
+          {
+            "value": "This is a retransmission of the same referral.",
+            "page": 1,
+            "quote": "This is a retransmission of the same referral.",
+            "confidence": 96.25319723076923
+          }
+        ],
+        "flags": [],
+        "uncertainties": []
+      },
+      "action": "skipped_duplicate",
+      "selected": null,
+      "routing_note": null,
+      "observed": null,
+      "duplicate_of": "FX-201",
+      "verification": "verified",
+      "verified_at": "2026-11-06T02:30:23.573927+00:00",
+      "submission_pending": false,
+      "submit_attempts": 0,
+      "errors": [],
+      "events": [
+        {
+          "at": "2026-11-06T02:30:07.918730+00:00",
+          "stage": "downloaded",
+          "detail": "Downloaded and validated PDF through the UI.",
+          "context_id": "445d87349a894f78a3dde905838961fe"
+        },
+        {
+          "at": "2026-11-06T02:30:23.568559+00:00",
+          "stage": "reconciled",
+          "detail": "Fresh UI inspection shows no completed route.",
+          "context_id": null
+        },
+        {
+          "at": "2026-11-06T02:30:23.573941+00:00",
+          "stage": "duplicate",
+          "detail": "Matching source ID, patient name, DOB and category; earliest original FX-201 verified routed.",
+          "context_id": null
+        }
+      ]
+    },
+    {
+      "fax_id": "FX-209",
+      "fax": {
+        "fax_id": "FX-209",
+        "received_at": "2026-11-03 08:42",
+        "sender": "Unidentified Fax Number",
+        "expected_pages": 1,
+        "status": "Routed"
+      },
+      "downloaded_fax": {
+        "fax_id": "FX-209",
+        "received_at": "2026-11-03 08:42",
+        "sender": "Unidentified Fax Number",
+        "expected_pages": 1,
+        "status": "New"
+      },
+      "pdf_path": "downloads/a54e6609d1f7911f2ebf3377.pdf",
+      "pdf_sha256": "587f25e225a1fce32d1f02205c969752e3b88f1adc15a4f6b2a1267c411e3d88",
+      "downloaded_at": "2026-11-06T02:30:08.621131+00:00",
+      "extraction": {
+        "engine": "Tesseract 5.3.0; English; policy v1",
+        "pages": [
+          {
+            "number": 1,
+            "text": "UNKNOWN SENDER\nFAX TRANSMISSION / SCANNED DOCUMENT\nFAX DOCUMENT\nTransmission ID: U-4009\nSubject: Patient paperwork\nAttached page appears incomplete.\nPlease see missing continuation page.\nNo readable document category or destination found.\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-209 Pagel ofl",
+            "confidence": 92.66068854221137,
+            "lines": [
+              {
+                "text": "UNKNOWN SENDER",
+                "confidence": 96.09871184615385
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 94.97600919354838
+              },
+              {
+                "text": "FAX DOCUMENT",
+                "confidence": 95.86726400000002
+              },
+              {
+                "text": "Transmission ID: U-4009",
+                "confidence": 93.37377142857142
+              },
+              {
+                "text": "Subject: Patient paperwork",
+                "confidence": 96.553495
+              },
+              {
+                "text": "Attached page appears incomplete.",
+                "confidence": 96.29740799999999
+              },
+              {
+                "text": "Please see missing continuation page.",
+                "confidence": 96.25667821212122
+              },
+              {
+                "text": "No readable document category or destination found.",
+                "confidence": 96.33890026666666
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 94.9276137631579
+              },
+              {
+                "text": "Transmission FX-209 Pagel ofl",
+                "confidence": 64.34605592307693
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          }
+        ],
+        "classification": "Needs Review",
+        "categories": [],
+        "evidence": [],
+        "source_ids": [],
+        "patient_names": [],
+        "dates_of_birth": [],
+        "resend_evidence": [],
+        "flags": [],
+        "uncertainties": [
+          "Page 1: Attached page appears incomplete.",
+          "Page 1: Please see missing continuation page.",
+          "Page 1: no recognized document heading.",
+          "Document category cannot be established from scanned evidence."
+        ]
+      },
+      "action": "needs_review",
+      "selected": {
+        "assigned_to": "Jordan Ellis - Manual Review",
+        "document_type": "Needs Review",
+        "document_folder": "Review / Unclassified"
+      },
+      "routing_note": "Page 1: Attached page appears incomplete.; Page 1: Please see missing continuation page.; Page 1: no recognized document heading.; Document category cannot be established from scanned evidence.",
+      "observed": {
+        "assigned_to": "Jordan Ellis - Manual Review",
+        "document_type": "Needs Review",
+        "document_folder": "Review / Unclassified"
+      },
+      "duplicate_of": null,
+      "verification": "verified",
+      "verified_at": "2026-11-06T02:30:23.236154+00:00",
+      "submission_pending": false,
+      "submit_attempts": 1,
+      "errors": [],
+      "events": [
+        {
+          "at": "2026-11-06T02:30:08.621120+00:00",
+          "stage": "downloaded",
+          "detail": "Downloaded and validated PDF through the UI.",
+          "context_id": "1ef958f841d14870bbe4476e63d275dd"
+        },
+        {
+          "at": "2026-11-06T02:30:22.752213+00:00",
+          "stage": "reconciled",
+          "detail": "Fresh UI inspection shows New; safe to prepare a route.",
+          "context_id": "867524c774a2462c9a818f76832aa840"
+        },
+        {
+          "at": "2026-11-06T02:30:22.847042+00:00",
+          "stage": "submit_intent",
+          "detail": "Confirmed exact fax ID and three dropdown values.",
+          "context_id": "867524c774a2462c9a818f76832aa840"
+        },
+        {
+          "at": "2026-11-06T02:30:22.908476+00:00",
+          "stage": "submit_returned",
+          "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
+          "context_id": null
+        },
+        {
+          "at": "2026-11-06T02:30:23.236169+00:00",
+          "stage": "verified",
+          "detail": "Read completed assignment and all three saved values in the UI.",
+          "context_id": null
+        }
+      ]
+    },
+    {
+      "fax_id": "FX-208",
+      "fax": {
+        "fax_id": "FX-208",
+        "received_at": "2026-11-03 08:37",
+        "sender": "Summit Diagnostic Labs",
+        "expected_pages": 1,
+        "status": "Routed"
+      },
+      "downloaded_fax": {
+        "fax_id": "FX-208",
+        "received_at": "2026-11-03 08:37",
+        "sender": "Summit Diagnostic Labs",
+        "expected_pages": 1,
+        "status": "New"
+      },
+      "pdf_path": "downloads/c321e14666d66eb3e11b936d.pdf",
+      "pdf_sha256": "4678dd0bb54f64d50a90220d2602cfca4a4f81b74e58485bda445fa5caa98fc0",
+      "downloaded_at": "2026-11-06T02:30:09.324401+00:00",
+      "extraction": {
+        "engine": "Tesseract 5.3.0; English; policy v1",
+        "pages": [
+          {
+            "number": 1,
+            "text": "SUMMIT DIAGNOSTIC LABS\nFAX TRANSMISSION / SCANNED DOCUMENT\nLABORATORY REPORT\nReport ID: LAB-4008\nPatient: Talia Nguyen\nDOB: 01/27/1993\nOrdering physician: Dr. T. Howe\nCollection date: 11/02/2026\nPanel: CBC with differential\nStatus: Final\nResults: See values on following table\nNo urgent flag provided on this report.\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-208 Page lofl",
+            "confidence": 93.61235601120129,
+            "lines": [
+              {
+                "text": "SUMMIT DIAGNOSTIC LABS",
+                "confidence": 95.7666207
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 94.57021406451614
+              },
+              {
+                "text": "LABORATORY REPORT",
+                "confidence": 96.486205
+              },
+              {
+                "text": "Report ID: LAB-4008",
+                "confidence": 93.45098752941176
+              },
+              {
+                "text": "Patient: Talia Nguyen",
+                "confidence": 96.36024405263159
+              },
+              {
+                "text": "DOB: 01/27/1993",
+                "confidence": 96.56808842857143
+              },
+              {
+                "text": "Ordering physician: Dr. T. Howe",
+                "confidence": 95.7800681111111
+              },
+              {
+                "text": "Collection date: 11/02/2026",
+                "confidence": 96.2887284
+              },
+              {
+                "text": "Panel: CBC with differential",
+                "confidence": 96.21971328000001
+              },
+              {
+                "text": "Status: Final",
+                "confidence": 96.42351583333334
+              },
+              {
+                "text": "Results: See values on following table",
+                "confidence": 96.2991066060606
+              },
+              {
+                "text": "No urgent flag provided on this report.",
+                "confidence": 96.39442727272727
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 95.08459042105264
+              },
+              {
+                "text": "Transmission FX-208 Page lofl",
+                "confidence": 67.74362223076923
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          }
+        ],
+        "classification": "Lab Result",
+        "categories": [
+          "Lab Result"
+        ],
+        "evidence": [
+          {
+            "value": "Lab Result",
+            "page": 1,
+            "quote": "LABORATORY REPORT",
+            "confidence": 96.486205
+          }
+        ],
+        "source_ids": [
+          {
+            "value": "LAB-4008",
+            "page": 1,
+            "quote": "Report ID: LAB-4008",
+            "confidence": 93.45098752941176
+          }
+        ],
+        "patient_names": [
+          {
+            "value": "Talia Nguyen",
+            "page": 1,
+            "quote": "Patient: Talia Nguyen",
+            "confidence": 96.36024405263159
+          }
+        ],
+        "dates_of_birth": [
+          {
+            "value": "01/27/1993",
+            "page": 1,
+            "quote": "DOB: 01/27/1993",
+            "confidence": 96.56808842857143
+          }
+        ],
+        "resend_evidence": [],
+        "flags": [],
+        "uncertainties": []
+      },
+      "action": "routed",
+      "selected": {
+        "assigned_to": "Noah Patel - Clinical Review",
+        "document_type": "Lab Result",
+        "document_folder": "Clinical / Labs"
+      },
+      "routing_note": "OCR evidence: Lab Result. Source reference: LAB-4008.",
+      "observed": {
+        "assigned_to": "Noah Patel - Clinical Review",
+        "document_type": "Lab Result",
+        "document_folder": "Clinical / Labs"
+      },
+      "duplicate_of": null,
+      "verification": "verified",
+      "verified_at": "2026-11-06T02:30:22.439465+00:00",
+      "submission_pending": false,
+      "submit_attempts": 1,
+      "errors": [],
+      "events": [
+        {
+          "at": "2026-11-06T02:30:09.324381+00:00",
+          "stage": "downloaded",
+          "detail": "Downloaded and validated PDF through the UI.",
+          "context_id": "80d33a9a35204b0097a8d9bfe7230a6f"
+        },
+        {
+          "at": "2026-11-06T02:30:21.936157+00:00",
+          "stage": "reconciled",
+          "detail": "Fresh UI inspection shows New; safe to prepare a route.",
+          "context_id": "8fe37a5f0b194af2b202531507bcac37"
+        },
+        {
+          "at": "2026-11-06T02:30:22.030815+00:00",
+          "stage": "submit_intent",
+          "detail": "Confirmed exact fax ID and three dropdown values.",
+          "context_id": "8fe37a5f0b194af2b202531507bcac37"
+        },
+        {
+          "at": "2026-11-06T02:30:22.107090+00:00",
+          "stage": "submit_returned",
+          "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
+          "context_id": null
+        },
+        {
+          "at": "2026-11-06T02:30:22.439475+00:00",
+          "stage": "verified",
+          "detail": "Read completed assignment and all three saved values in the UI.",
+          "context_id": null
+        }
+      ]
+    },
+    {
+      "fax_id": "FX-207",
+      "fax": {
+        "fax_id": "FX-207",
+        "received_at": "2026-11-03 08:31",
+        "sender": "Example Health Plan",
+        "expected_pages": 1,
+        "status": "Routed"
+      },
+      "downloaded_fax": {
+        "fax_id": "FX-207",
+        "received_at": "2026-11-03 08:31",
+        "sender": "Example Health Plan",
+        "expected_pages": 1,
+        "status": "New"
+      },
+      "pdf_path": "downloads/ae04a427024c0b9b234586ff.pdf",
+      "pdf_sha256": "c8c9944ada8c5582dcfdf79373b5ac773d1812db29f50f518be4265f0ac59b32",
+      "downloaded_at": "2026-11-06T02:30:10.033113+00:00",
+      "extraction": {
+        "engine": "Tesseract 5.3.0; English; policy v1",
+        "pages": [
+          {
+            "number": 1,
+            "text": "EXAMPLE HEALTH PLAN\nFAX TRANSMISSION / SCANNED DOCUMENT\nEXPLANATION OF BENEFITS (EOB)\nRemittance ID: EOB-4007\nMember: Jordan Clark\nService date: 10/21/2026\nClaim reference: C-10778\nBilled amount: $320.00\nAllowed amount: $244.00\nPlan paid: $195.20\nPatient responsibility: $48.80\nThis is not a bill to the patient.\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-207 Pagelofl",
+            "confidence": 94.14790985083414,
+            "lines": [
+              {
+                "text": "EXAMPLE HEALTH PLAN",
+                "confidence": 96.55315964705882
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 95.08055103225807
+              },
+              {
+                "text": "EXPLANATION OF BENEFITS (EOB)",
+                "confidence": 94.64676665384617
+              },
+              {
+                "text": "Remittance ID: EOB-4007",
+                "confidence": 93.86042680952382
+              },
+              {
+                "text": "Member: Jordan Clark",
+                "confidence": 96.32291055555555
+              },
+              {
+                "text": "Service date: 10/21/2026",
+                "confidence": 96.39637186363638
+              },
+              {
+                "text": "Claim reference: C-10778",
+                "confidence": 93.03444004545455
+              },
+              {
+                "text": "Billed amount: $320.00",
+                "confidence": 96.59028459999999
+              },
+              {
+                "text": "Allowed amount: $244.00",
+                "confidence": 95.687309
+              },
+              {
+                "text": "Plan paid: $195.20",
+                "confidence": 96.2139769375
+              },
+              {
+                "text": "Patient responsibility: $48.80",
+                "confidence": 96.44913564285714
+              },
+              {
+                "text": "This is not a bill to the patient.",
+                "confidence": 96.43570033333334
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 94.77076381578948
+              },
+              {
+                "text": "Transmission FX-207 Pagelofl",
+                "confidence": 77.85341338461538
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          }
+        ],
+        "classification": "EOB",
+        "categories": [
+          "EOB"
+        ],
+        "evidence": [
+          {
+            "value": "EOB",
+            "page": 1,
+            "quote": "EXPLANATION OF BENEFITS (EOB)",
+            "confidence": 94.64676665384617
+          }
+        ],
+        "source_ids": [
+          {
+            "value": "EOB-4007",
+            "page": 1,
+            "quote": "Remittance ID: EOB-4007",
+            "confidence": 93.86042680952382
+          }
+        ],
+        "patient_names": [
+          {
+            "value": "Jordan Clark",
+            "page": 1,
+            "quote": "Member: Jordan Clark",
+            "confidence": 96.32291055555555
+          }
+        ],
+        "dates_of_birth": [],
+        "resend_evidence": [],
+        "flags": [],
+        "uncertainties": []
+      },
+      "action": "routed",
+      "selected": {
+        "assigned_to": "Liam Rivera - Billing",
+        "document_type": "EOB",
+        "document_folder": "Billing / EOBs"
+      },
+      "routing_note": "OCR evidence: EOB. Source reference: EOB-4007.",
+      "observed": {
+        "assigned_to": "Liam Rivera - Billing",
+        "document_type": "EOB",
+        "document_folder": "Billing / EOBs"
+      },
+      "duplicate_of": null,
+      "verification": "verified",
+      "verified_at": "2026-11-06T02:30:21.603469+00:00",
+      "submission_pending": false,
+      "submit_attempts": 1,
+      "errors": [],
+      "events": [
+        {
+          "at": "2026-11-06T02:30:10.033101+00:00",
+          "stage": "downloaded",
+          "detail": "Downloaded and validated PDF through the UI.",
+          "context_id": "1514172a23eb4ab3b9c04130cd509274"
+        },
+        {
+          "at": "2026-11-06T02:30:21.120334+00:00",
+          "stage": "reconciled",
+          "detail": "Fresh UI inspection shows New; safe to prepare a route.",
+          "context_id": "4db94f069eec4c50967d3adf5808932e"
+        },
+        {
+          "at": "2026-11-06T02:30:21.213442+00:00",
+          "stage": "submit_intent",
+          "detail": "Confirmed exact fax ID and three dropdown values.",
+          "context_id": "4db94f069eec4c50967d3adf5808932e"
+        },
+        {
+          "at": "2026-11-06T02:30:21.275007+00:00",
+          "stage": "submit_returned",
+          "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
+          "context_id": null
+        },
+        {
+          "at": "2026-11-06T02:30:21.603481+00:00",
+          "stage": "verified",
+          "detail": "Read completed assignment and all three saved values in the UI.",
+          "context_id": null
+        }
+      ]
+    },
+    {
+      "fax_id": "FX-206",
+      "fax": {
+        "fax_id": "FX-206",
+        "received_at": "2026-11-03 08:25",
+        "sender": "Hillside Records Office",
+        "expected_pages": 2,
+        "status": "Routed"
+      },
+      "downloaded_fax": {
+        "fax_id": "FX-206",
+        "received_at": "2026-11-03 08:25",
+        "sender": "Hillside Records Office",
+        "expected_pages": 2,
+        "status": "New"
+      },
+      "pdf_path": "downloads/f19c77d49e1a47ff0ab3abab.pdf",
+      "pdf_sha256": "44b68d8fcf367def23745addd79d26d47c17e930f4b5a496feb2d0a4aef0f958",
+      "downloaded_at": "2026-11-06T02:30:10.789174+00:00",
+      "extraction": {
+        "engine": "Tesseract 5.3.0; English; policy v1",
+        "pages": [
+          {
+            "number": 1,
+            "text": "HILLSIDE RECORDS OFFICE\nFAX TRANSMISSION / SCANNED DOCUMENT\nREQUEST FOR MEDICAL RECORDS\nRecords request ID: MR-4006\nPatient: Cameron Blake\nDOB: 02/09/1980\nRequesting entity: Hillside Medical Group\nRequested records: Office visits, imaging reports\nDate range requested: 2025-2026\nPatient authorization: Included on page 2\nPlease process according to clinic release policy.\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-206 Page 1 of 2",
+            "confidence": 95.4708763451301,
+            "lines": [
+              {
+                "text": "HILLSIDE RECORDS OFFICE",
+                "confidence": 96.00088614285715
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 94.00926632258064
+              },
+              {
+                "text": "REQUEST FOR MEDICAL RECORDS",
+                "confidence": 95.616287125
+              },
+              {
+                "text": "Records request ID: MR-4006",
+                "confidence": 93.74282091666667
+              },
+              {
+                "text": "Patient: Cameron Blake",
+                "confidence": 96.4905416
+              },
+              {
+                "text": "DOB: 02/09/1980",
+                "confidence": 96.87794142857142
+              },
+              {
+                "text": "Requesting entity: Hillside Medical Group",
+                "confidence": 96.1444588108108
+              },
+              {
+                "text": "Requested records: Office visits, imaging reports",
+                "confidence": 96.64563279545455
+              },
+              {
+                "text": "Date range requested: 2025-2026",
+                "confidence": 96.49787735714287
+              },
+              {
+                "text": "Patient authorization: Included on page 2",
+                "confidence": 96.37510438888889
+              },
+              {
+                "text": "Please process according to clinic release policy.",
+                "confidence": 96.38969993181819
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 94.45624326315789
+              },
+              {
+                "text": "Transmission FX-206 Page 1 of 2",
+                "confidence": 91.62384411538461
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          },
+          {
+            "number": 2,
+            "text": "HILLSIDE RECORDS OFFICE\nFAX TRANSMISSION / SCANNED DOCUMENT\nAUTHORIZATION TO RELEASE INFORMATION\nRelated request: MR-4006\nPatient: Cameron Blake\n| authorize release of records to Hillside Medical Group.\nSignature: Cameron Blake (synthetic example)\nDate signed: 10/31/2026\nFor assessment purposes only.\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-206 Page 2 of 2",
+            "confidence": 95.40427754449546,
+            "lines": [
+              {
+                "text": "HILLSIDE RECORDS OFFICE",
+                "confidence": 96.00811247619046
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 95.03997990322581
+              },
+              {
+                "text": "AUTHORIZATION TO RELEASE INFORMATION",
+                "confidence": 95.85530454545454
+              },
+              {
+                "text": "Related request: MR-4006",
+                "confidence": 93.86642027272728
+              },
+              {
+                "text": "Patient: Cameron Blake",
+                "confidence": 96.3586525
+              },
+              {
+                "text": "| authorize release of records to Hillside Medical Group.",
+                "confidence": 96.2531732244898
+              },
+              {
+                "text": "Signature: Cameron Blake (synthetic example)",
+                "confidence": 96.161620925
+              },
+              {
+                "text": "Date signed: 10/31/2026",
+                "confidence": 96.23092290476191
+              },
+              {
+                "text": "For assessment purposes only.",
+                "confidence": 96.26032757692307
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 94.98271939473683
+              },
+              {
+                "text": "Transmission FX-206 Page 2 of 2",
+                "confidence": 91.87829538461537
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          }
+        ],
+        "classification": "Records Request",
+        "categories": [
+          "Records Request"
+        ],
+        "evidence": [
+          {
+            "value": "Records Request",
+            "page": 1,
+            "quote": "REQUEST FOR MEDICAL RECORDS",
+            "confidence": 95.616287125
+          },
+          {
+            "value": "Records Request",
+            "page": 2,
+            "quote": "AUTHORIZATION TO RELEASE INFORMATION",
+            "confidence": 95.85530454545454
+          }
+        ],
+        "source_ids": [
+          {
+            "value": "MR-4006",
+            "page": 1,
+            "quote": "Records request ID: MR-4006",
+            "confidence": 93.74282091666667
+          },
+          {
+            "value": "MR-4006",
+            "page": 2,
+            "quote": "Related request: MR-4006",
+            "confidence": 93.86642027272728
+          }
+        ],
+        "patient_names": [
+          {
+            "value": "Cameron Blake",
+            "page": 1,
+            "quote": "Patient: Cameron Blake",
+            "confidence": 96.4905416
+          },
+          {
+            "value": "Cameron Blake",
+            "page": 2,
+            "quote": "Patient: Cameron Blake",
+            "confidence": 96.3586525
+          }
+        ],
+        "dates_of_birth": [
+          {
+            "value": "02/09/1980",
+            "page": 1,
+            "quote": "DOB: 02/09/1980",
+            "confidence": 96.87794142857142
+          }
+        ],
+        "resend_evidence": [],
+        "flags": [],
+        "uncertainties": []
+      },
+      "action": "routed",
+      "selected": {
+        "assigned_to": "Mia Gomez - Medical Records",
+        "document_type": "Records Request",
+        "document_folder": "Records / Requests"
+      },
+      "routing_note": "OCR evidence: Records Request. Source reference: MR-4006.",
+      "observed": {
+        "assigned_to": "Mia Gomez - Medical Records",
+        "document_type": "Records Request",
+        "document_folder": "Records / Requests"
+      },
+      "duplicate_of": null,
+      "verification": "verified",
+      "verified_at": "2026-11-06T02:30:20.788082+00:00",
+      "submission_pending": false,
+      "submit_attempts": 1,
+      "errors": [],
+      "events": [
+        {
+          "at": "2026-11-06T02:30:10.789162+00:00",
+          "stage": "downloaded",
+          "detail": "Downloaded and validated PDF through the UI.",
+          "context_id": "3b152ddfb40848c9b052c27e0f9145b3"
+        },
+        {
+          "at": "2026-11-06T02:30:20.306098+00:00",
+          "stage": "reconciled",
+          "detail": "Fresh UI inspection shows New; safe to prepare a route.",
+          "context_id": "7263fb0f570649b39a9fb542e69e3e29"
+        },
+        {
+          "at": "2026-11-06T02:30:20.400284+00:00",
+          "stage": "submit_intent",
+          "detail": "Confirmed exact fax ID and three dropdown values.",
+          "context_id": "7263fb0f570649b39a9fb542e69e3e29"
+        },
+        {
+          "at": "2026-11-06T02:30:20.474832+00:00",
+          "stage": "submit_returned",
+          "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
+          "context_id": null
+        },
+        {
+          "at": "2026-11-06T02:30:20.788095+00:00",
+          "stage": "verified",
+          "detail": "Read completed assignment and all three saved values in the UI.",
+          "context_id": null
+        }
+      ]
+    },
+    {
+      "fax_id": "FX-205",
+      "fax": {
+        "fax_id": "FX-205",
+        "received_at": "2026-11-03 08:19",
+        "sender": "Harbor Community Pharmacy",
+        "expected_pages": 1,
+        "status": "Routed"
+      },
+      "downloaded_fax": {
+        "fax_id": "FX-205",
+        "received_at": "2026-11-03 08:19",
+        "sender": "Harbor Community Pharmacy",
+        "expected_pages": 1,
+        "status": "New"
+      },
+      "pdf_path": "downloads/7ff1eb5cdea3fc4ed1d0922a.pdf",
+      "pdf_sha256": "91819d99630c246be302e3100140612a53ebae691e137b31761c4804fbfe0cf0",
+      "downloaded_at": "2026-11-06T02:30:11.972113+00:00",
+      "extraction": {
+        "engine": "Tesseract 5.3.0; English; policy v1",
+        "pages": [
+          {
+            "number": 1,
+            "text": "HARBOR COMMUNITY PHARMACY\nFAX TRANSMISSION / SCANNED DOCUMENT\nPRESCRIPTION REFILL REQUEST\nRequest number: RX-4005\nPatient: Sydney Patel\nDOB: 08/07/1988\nMedication: Lisinopril 10 mg tablet\nRequest: Renewal authorization requested\nPrescriber: Dr. M. Shaw\nPharmacy callback: (555) 010-0105\nNo dispensing authorization is implied by this fax.\nReply to pharmacy through normal clinic workflow.\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-205 Pagel ofl",
+            "confidence": 93.54502794424604,
+            "lines": [
+              {
+                "text": "HARBOR COMMUNITY PHARMACY",
+                "confidence": 95.79553573913044
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 94.92956812903226
+              },
+              {
+                "text": "PRESCRIPTION REFILL REQUEST",
+                "confidence": 95.81884871999999
+              },
+              {
+                "text": "Request number: RX-4005",
+                "confidence": 94.07435100000001
+              },
+              {
+                "text": "Patient: Sydney Patel",
+                "confidence": 96.21190221052632
+              },
+              {
+                "text": "DOB: 08/07/1988",
+                "confidence": 95.685921
+              },
+              {
+                "text": "Medication: Lisinopril 10 mg tablet",
+                "confidence": 96.41074396774194
+              },
+              {
+                "text": "Request: Renewal authorization requested",
+                "confidence": 96.08268516216216
+              },
+              {
+                "text": "Prescriber: Dr. M. Shaw",
+                "confidence": 93.18418584999999
+              },
+              {
+                "text": "Pharmacy callback: (555) 010-0105",
+                "confidence": 96.32822876666667
+              },
+              {
+                "text": "No dispensing authorization is implied by this fax.",
+                "confidence": 96.14273322727273
+              },
+              {
+                "text": "Reply to pharmacy through normal clinic workflow.",
+                "confidence": 96.32237699999999
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 94.96586284210527
+              },
+              {
+                "text": "Transmission FX-205 Pagel ofl",
+                "confidence": 63.19993499999999
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          }
+        ],
+        "classification": "Refill Request",
+        "categories": [
+          "Refill Request"
+        ],
+        "evidence": [
+          {
+            "value": "Refill Request",
+            "page": 1,
+            "quote": "PRESCRIPTION REFILL REQUEST",
+            "confidence": 95.81884871999999
+          }
+        ],
+        "source_ids": [
+          {
+            "value": "RX-4005",
+            "page": 1,
+            "quote": "Request number: RX-4005",
+            "confidence": 94.07435100000001
+          }
+        ],
+        "patient_names": [
+          {
+            "value": "Sydney Patel",
+            "page": 1,
+            "quote": "Patient: Sydney Patel",
+            "confidence": 96.21190221052632
+          }
+        ],
+        "dates_of_birth": [
+          {
+            "value": "08/07/1988",
+            "page": 1,
+            "quote": "DOB: 08/07/1988",
+            "confidence": 95.685921
+          }
+        ],
+        "resend_evidence": [],
+        "flags": [],
+        "uncertainties": []
+      },
+      "action": "routed",
+      "selected": {
+        "assigned_to": "Ava Wilson - Nursing / Medication",
+        "document_type": "Refill Request",
+        "document_folder": "Nursing / Medication"
+      },
+      "routing_note": "OCR evidence: Refill Request. Source reference: RX-4005.",
+      "observed": {
+        "assigned_to": "Ava Wilson - Nursing / Medication",
+        "document_type": "Refill Request",
+        "document_folder": "Nursing / Medication"
+      },
+      "duplicate_of": null,
+      "verification": "verified",
+      "verified_at": "2026-11-06T02:30:19.960134+00:00",
+      "submission_pending": false,
+      "submit_attempts": 1,
+      "errors": [],
+      "events": [
+        {
+          "at": "2026-11-06T02:30:11.972100+00:00",
+          "stage": "downloaded",
+          "detail": "Downloaded and validated PDF through the UI.",
+          "context_id": "50b4c613af7b48aca5762089739f4bba"
+        },
+        {
+          "at": "2026-11-06T02:30:19.472642+00:00",
+          "stage": "reconciled",
+          "detail": "Fresh UI inspection shows New; safe to prepare a route.",
+          "context_id": "f4fa20b55dbe4f68ac71b4909a2275ab"
+        },
+        {
+          "at": "2026-11-06T02:30:19.565106+00:00",
+          "stage": "submit_intent",
+          "detail": "Confirmed exact fax ID and three dropdown values.",
+          "context_id": "f4fa20b55dbe4f68ac71b4909a2275ab"
+        },
+        {
+          "at": "2026-11-06T02:30:19.626409+00:00",
+          "stage": "submit_returned",
+          "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
+          "context_id": null
+        },
+        {
+          "at": "2026-11-06T02:30:19.960181+00:00",
+          "stage": "verified",
+          "detail": "Read completed assignment and all three saved values in the UI.",
+          "context_id": null
+        }
+      ]
+    },
+    {
+      "fax_id": "FX-204",
+      "fax": {
+        "fax_id": "FX-204",
+        "received_at": "2026-11-03 08:12",
+        "sender": "Blue Ridge Medical",
+        "expected_pages": 1,
+        "status": "Routed"
+      },
+      "downloaded_fax": {
+        "fax_id": "FX-204",
+        "received_at": "2026-11-03 08:12",
+        "sender": "Blue Ridge Medical",
+        "expected_pages": 1,
+        "status": "New"
+      },
+      "pdf_path": "downloads/8730915549d9d194a4a19588.pdf",
+      "pdf_sha256": "201436548e34065cc195238547b3c30bb9b759c47cbc106a9bc1a654268766ba",
+      "downloaded_at": "2026-11-06T02:30:12.725837+00:00",
+      "extraction": {
+        "engine": "Tesseract 5.3.0; English; policy v1",
+        "pages": [
+          {
+            "number": 1,
+            "text": "BLUE RIDGE MEDICAL\nFAX TRANSMISSION / SCANNED DOCUMENT\nPRIOR AUTHORIZATION REQUEST\nRequest ID: PA-4004\nPatient: Oliver Grant\nDOB: 06/21/1983\nOrdering provider: Dr. S. Raman\nService requested: MRI lumbar spine\nPayer: Example Health Plan (synthetic)\nStatus: Documentation requested for prior authorization.\nPlease review coverage requirements.\nThis document is not an authorization approval.\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-204 Page lofl",
+            "confidence": 93.80780231647039,
+            "lines": [
+              {
+                "text": "BLUE RIDGE MEDICAL",
+                "confidence": 96.462641625
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 94.87997941935483
+              },
+              {
+                "text": "PRIOR AUTHORIZATION REQUEST",
+                "confidence": 96.1799838
+              },
+              {
+                "text": "Request ID: PA-4004",
+                "confidence": 93.79689747058825
+              },
+              {
+                "text": "Patient: Oliver Grant",
+                "confidence": 96.05528621052632
+              },
+              {
+                "text": "DOB: 06/21/1983",
+                "confidence": 96.35709742857144
+              },
+              {
+                "text": "Ordering provider: Dr. S. Raman",
+                "confidence": 95.41919662962964
+              },
+              {
+                "text": "Service requested: MRI lumbar spine",
+                "confidence": 96.33222558064516
+              },
+              {
+                "text": "Payer: Example Health Plan (synthetic)",
+                "confidence": 96.32217264705882
+              },
+              {
+                "text": "Status: Documentation requested for prior authorization.",
+                "confidence": 96.18261790196078
+              },
+              {
+                "text": "Please review coverage requirements.",
+                "confidence": 96.31577251515152
+              },
+              {
+                "text": "This document is not an authorization approval.",
+                "confidence": 96.07858853658537
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 95.15395121052632
+              },
+              {
+                "text": "Transmission FX-204 Page lofl",
+                "confidence": 64.32547407692307
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          }
+        ],
+        "classification": "Prior Authorization",
+        "categories": [
+          "Prior Authorization"
+        ],
+        "evidence": [
+          {
+            "value": "Prior Authorization",
+            "page": 1,
+            "quote": "PRIOR AUTHORIZATION REQUEST",
+            "confidence": 96.1799838
+          }
+        ],
+        "source_ids": [
+          {
+            "value": "PA-4004",
+            "page": 1,
+            "quote": "Request ID: PA-4004",
+            "confidence": 93.79689747058825
+          }
+        ],
+        "patient_names": [
+          {
+            "value": "Oliver Grant",
+            "page": 1,
+            "quote": "Patient: Oliver Grant",
+            "confidence": 96.05528621052632
+          }
+        ],
+        "dates_of_birth": [
+          {
+            "value": "06/21/1983",
+            "page": 1,
+            "quote": "DOB: 06/21/1983",
+            "confidence": 96.35709742857144
+          }
+        ],
+        "resend_evidence": [],
+        "flags": [],
+        "uncertainties": []
+      },
+      "action": "routed",
+      "selected": {
+        "assigned_to": "Ethan Brooks - Authorizations",
+        "document_type": "Prior Authorization",
+        "document_folder": "Authorizations / Pending"
+      },
+      "routing_note": "OCR evidence: Prior Authorization. Source reference: PA-4004.",
+      "observed": {
+        "assigned_to": "Ethan Brooks - Authorizations",
+        "document_type": "Prior Authorization",
+        "document_folder": "Authorizations / Pending"
+      },
+      "duplicate_of": null,
+      "verification": "verified",
+      "verified_at": "2026-11-06T02:30:19.143190+00:00",
+      "submission_pending": false,
+      "submit_attempts": 1,
+      "errors": [],
+      "events": [
+        {
+          "at": "2026-11-06T02:30:12.725821+00:00",
+          "stage": "downloaded",
+          "detail": "Downloaded and validated PDF through the UI.",
+          "context_id": "f9eb2f7d60ba4f95826a581e66c21968"
+        },
+        {
+          "at": "2026-11-06T02:30:18.606210+00:00",
+          "stage": "reconciled",
+          "detail": "Fresh UI inspection shows New; safe to prepare a route.",
+          "context_id": "8fb172353fe243a5b2b398e510c58dfb"
+        },
+        {
+          "at": "2026-11-06T02:30:18.720842+00:00",
+          "stage": "submit_intent",
+          "detail": "Confirmed exact fax ID and three dropdown values.",
+          "context_id": "8fb172353fe243a5b2b398e510c58dfb"
+        },
+        {
+          "at": "2026-11-06T02:30:18.791831+00:00",
+          "stage": "submit_returned",
+          "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
+          "context_id": null
+        },
+        {
+          "at": "2026-11-06T02:30:19.143200+00:00",
+          "stage": "verified",
+          "detail": "Read completed assignment and all three saved values in the UI.",
+          "context_id": null
+        }
+      ]
+    },
+    {
+      "fax_id": "FX-203",
+      "fax": {
+        "fax_id": "FX-203",
+        "received_at": "2026-11-03 08:12",
+        "sender": "Blue Ridge Medical",
+        "expected_pages": 1,
+        "status": "Routed"
+      },
+      "downloaded_fax": {
+        "fax_id": "FX-203",
+        "received_at": "2026-11-03 08:12",
+        "sender": "Blue Ridge Medical",
+        "expected_pages": 1,
+        "status": "New"
+      },
+      "pdf_path": "downloads/5f8c9c30890ebb90cd8cba91.pdf",
+      "pdf_sha256": "ab215f8f481801f254bc5f983145ee848d42123c728024ce1354f376c3da4ded",
+      "downloaded_at": "2026-11-06T02:30:13.434228+00:00",
+      "extraction": {
+        "engine": "Tesseract 5.3.0; English; policy v1",
+        "pages": [
+          {
+            "number": 1,
+            "text": "BLUE RIDGE RADIOLOGY\nFAX TRANSMISSION / SCANNED DOCUMENT\nDIAGNOSTIC IMAGING REPORT\nAccession Number: IMG-4003\nPatient: Naomi Lee\nDOB: 12/11/1990\nStudy: MRI cervical spine without contrast\nStudy date: 11/01/2026\nFindings: Multilevel degenerative change.\nImpression: See full radiology findings.\nInterpreting radiologist: Dr. J. Webb\nFINAL RADIOLOGY REPORT\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-203 Pagelofl",
+            "confidence": 94.71876967875875,
+            "lines": [
+              {
+                "text": "BLUE RIDGE RADIOLOGY",
+                "confidence": 96.27217766666666
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 95.0131020967742
+              },
+              {
+                "text": "DIAGNOSTIC IMAGING REPORT",
+                "confidence": 95.98945104347825
+              },
+              {
+                "text": "Accession Number: IMG-4003",
+                "confidence": 93.82895350000001
+              },
+              {
+                "text": "Patient: Naomi Lee",
+                "confidence": 96.0847970625
+              },
+              {
+                "text": "DOB: 12/11/1990",
+                "confidence": 96.69528642857144
+              },
+              {
+                "text": "Study: MRI cervical spine without contrast",
+                "confidence": 96.44390781081081
+              },
+              {
+                "text": "Study date: 11/01/2026",
+                "confidence": 96.10841
+              },
+              {
+                "text": "Findings: Multilevel degenerative change.",
+                "confidence": 96.47874505263158
+              },
+              {
+                "text": "Impression: See full radiology findings.",
+                "confidence": 96.20480302777779
+              },
+              {
+                "text": "Interpreting radiologist: Dr. J. Webb",
+                "confidence": 95.2992206969697
+              },
+              {
+                "text": "FINAL RADIOLOGY REPORT",
+                "confidence": 96.23224745
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 94.92709481578947
+              },
+              {
+                "text": "Transmission FX-203 Pagelofl",
+                "confidence": 80.34773684615385
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          }
+        ],
+        "classification": "Imaging Report",
+        "categories": [
+          "Imaging Report"
+        ],
+        "evidence": [
+          {
+            "value": "Imaging Report",
+            "page": 1,
+            "quote": "DIAGNOSTIC IMAGING REPORT",
+            "confidence": 95.98945104347825
+          },
+          {
+            "value": "Imaging Report",
+            "page": 1,
+            "quote": "FINAL RADIOLOGY REPORT",
+            "confidence": 96.23224745
+          }
+        ],
+        "source_ids": [
+          {
+            "value": "IMG-4003",
+            "page": 1,
+            "quote": "Accession Number: IMG-4003",
+            "confidence": 93.82895350000001
+          }
+        ],
+        "patient_names": [
+          {
+            "value": "Naomi Lee",
+            "page": 1,
+            "quote": "Patient: Naomi Lee",
+            "confidence": 96.0847970625
+          }
+        ],
+        "dates_of_birth": [
+          {
+            "value": "12/11/1990",
+            "page": 1,
+            "quote": "DOB: 12/11/1990",
+            "confidence": 96.69528642857144
+          }
+        ],
+        "resend_evidence": [],
+        "flags": [],
+        "uncertainties": []
+      },
+      "action": "routed",
+      "selected": {
+        "assigned_to": "Noah Patel - Clinical Review",
+        "document_type": "Imaging Report",
+        "document_folder": "Clinical / Imaging"
+      },
+      "routing_note": "OCR evidence: Imaging Report. Source reference: IMG-4003.",
+      "observed": {
+        "assigned_to": "Noah Patel - Clinical Review",
+        "document_type": "Imaging Report",
+        "document_folder": "Clinical / Imaging"
+      },
+      "duplicate_of": null,
+      "verification": "verified",
+      "verified_at": "2026-11-06T02:30:18.254196+00:00",
+      "submission_pending": false,
+      "submit_attempts": 1,
+      "errors": [],
+      "events": [
+        {
+          "at": "2026-11-06T02:30:13.434218+00:00",
+          "stage": "downloaded",
+          "detail": "Downloaded and validated PDF through the UI.",
+          "context_id": "a477b41e2dc3492a823e2105eb870111"
+        },
+        {
+          "at": "2026-11-06T02:30:17.776030+00:00",
+          "stage": "reconciled",
+          "detail": "Fresh UI inspection shows New; safe to prepare a route.",
+          "context_id": "6e7b9837160749b38c369bb118d15668"
+        },
+        {
+          "at": "2026-11-06T02:30:17.864856+00:00",
+          "stage": "submit_intent",
+          "detail": "Confirmed exact fax ID and three dropdown values.",
+          "context_id": "6e7b9837160749b38c369bb118d15668"
+        },
+        {
+          "at": "2026-11-06T02:30:17.924026+00:00",
+          "stage": "submit_returned",
+          "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
+          "context_id": null
+        },
+        {
+          "at": "2026-11-06T02:30:18.254205+00:00",
+          "stage": "verified",
+          "detail": "Read completed assignment and all three saved values in the UI.",
+          "context_id": null
+        }
+      ]
+    },
+    {
+      "fax_id": "FX-202",
+      "fax": {
+        "fax_id": "FX-202",
+        "received_at": "2026-11-03 08:06",
+        "sender": "Summit Diagnostic Labs",
+        "expected_pages": 1,
+        "status": "Routed"
+      },
+      "downloaded_fax": {
+        "fax_id": "FX-202",
+        "received_at": "2026-11-03 08:06",
+        "sender": "Summit Diagnostic Labs",
+        "expected_pages": 1,
+        "status": "New"
+      },
+      "pdf_path": "downloads/b259273bca3183ad0c1d5ddc.pdf",
+      "pdf_sha256": "519e074e41a3bc3d89aba0eaa42e512bdad98db090992b48a89d2685edddf8cc",
+      "downloaded_at": "2026-11-06T02:30:14.154826+00:00",
+      "extraction": {
+        "engine": "Tesseract 5.3.0; English; policy v1",
+        "pages": [
+          {
+            "number": 1,
+            "text": "SUMMIT DIAGNOSTIC LABS\nFAX TRANSMISSION / SCANNED DOCUMENT\nLABORATORY RESULTS\nDocument reference: LAB-8302\nPatient: Marcus Bell\nDOB: 09/03/1974\nOrdering clinician: Dr. Anika Das\nCollection date: 11/02/2026\nPanel: Basic metabolic panel\nResult: Potassium 6.3 mmol/L\nCRITICAL RESULT - CALLING PROVIDER\nCritical value notification documented at 07:55.\nFor immediate review by authorized clinical personnel.\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-202 Page 1of1",
+            "confidence": 93.86439349332576,
+            "lines": [
+              {
+                "text": "SUMMIT DIAGNOSTIC LABS",
+                "confidence": 96.154576
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 94.00926632258064
+              },
+              {
+                "text": "LABORATORY RESULTS",
+                "confidence": 96.24314305882352
+              },
+              {
+                "text": "Document reference: LAB-8302",
+                "confidence": 92.89539492307692
+              },
+              {
+                "text": "Patient: Marcus Bell",
+                "confidence": 96.2565278888889
+              },
+              {
+                "text": "DOB: 09/03/1974",
+                "confidence": 96.08451057142858
+              },
+              {
+                "text": "Ordering clinician: Dr. Anika Das",
+                "confidence": 96.20783648275862
+              },
+              {
+                "text": "Collection date: 11/02/2026",
+                "confidence": 96.49302960000001
+              },
+              {
+                "text": "Panel: Basic metabolic panel",
+                "confidence": 96.59973056000001
+              },
+              {
+                "text": "Result: Potassium 6.3 mmol/L",
+                "confidence": 96.13161636000001
+              },
+              {
+                "text": "CRITICAL RESULT - CALLING PROVIDER",
+                "confidence": 95.29373066666668
+              },
+              {
+                "text": "Critical value notification documented at 07:55.",
+                "confidence": 96.16514397674418
+              },
+              {
+                "text": "For immediate review by authorized clinical personnel.",
+                "confidence": 96.48710283333332
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 94.45624326315789
+              },
+              {
+                "text": "Transmission FX-202 Page 1of1",
+                "confidence": 67.44437646153845
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          }
+        ],
+        "classification": "Needs Review",
+        "categories": [
+          "Lab Result"
+        ],
+        "evidence": [
+          {
+            "value": "Lab Result",
+            "page": 1,
+            "quote": "LABORATORY RESULTS",
+            "confidence": 96.24314305882352
+          }
+        ],
+        "source_ids": [
+          {
+            "value": "LAB-8302",
+            "page": 1,
+            "quote": "Document reference: LAB-8302",
+            "confidence": 92.89539492307692
+          }
+        ],
+        "patient_names": [
+          {
+            "value": "Marcus Bell",
+            "page": 1,
+            "quote": "Patient: Marcus Bell",
+            "confidence": 96.2565278888889
+          }
+        ],
+        "dates_of_birth": [
+          {
+            "value": "09/03/1974",
+            "page": 1,
+            "quote": "DOB: 09/03/1974",
+            "confidence": 96.08451057142858
+          }
+        ],
+        "resend_evidence": [],
+        "flags": [
+          "Page 1: CRITICAL RESULT - CALLING PROVIDER",
+          "Page 1: Critical value notification documented at 07:55."
+        ],
+        "uncertainties": []
+      },
+      "action": "needs_review",
+      "selected": {
+        "assigned_to": "Jordan Ellis - Manual Review",
+        "document_type": "Needs Review",
+        "document_folder": "Review / Unclassified"
+      },
+      "routing_note": "Page 1: CRITICAL RESULT - CALLING PROVIDER; Page 1: Critical value notification documented at 07:55.",
+      "observed": {
+        "assigned_to": "Jordan Ellis - Manual Review",
+        "document_type": "Needs Review",
+        "document_folder": "Review / Unclassified"
+      },
+      "duplicate_of": null,
+      "verification": "verified",
+      "verified_at": "2026-11-06T02:30:17.438234+00:00",
+      "submission_pending": false,
+      "submit_attempts": 1,
+      "errors": [],
+      "events": [
+        {
+          "at": "2026-11-06T02:30:14.154812+00:00",
+          "stage": "downloaded",
+          "detail": "Downloaded and validated PDF through the UI.",
+          "context_id": "2c5b6e6ac0c2450791ed8de58b54507e"
+        },
+        {
+          "at": "2026-11-06T02:30:16.926850+00:00",
+          "stage": "reconciled",
+          "detail": "Fresh UI inspection shows New; safe to prepare a route.",
+          "context_id": "d48ca60aff644ffd99861d145ef48b23"
+        },
+        {
+          "at": "2026-11-06T02:30:17.034812+00:00",
+          "stage": "submit_intent",
+          "detail": "Confirmed exact fax ID and three dropdown values.",
+          "context_id": "d48ca60aff644ffd99861d145ef48b23"
+        },
+        {
+          "at": "2026-11-06T02:30:17.110369+00:00",
+          "stage": "submit_returned",
+          "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
+          "context_id": null
+        },
+        {
+          "at": "2026-11-06T02:30:17.438245+00:00",
+          "stage": "verified",
+          "detail": "Read completed assignment and all three saved values in the UI.",
+          "context_id": null
+        }
+      ]
+    },
+    {
+      "fax_id": "FX-201",
+      "fax": {
+        "fax_id": "FX-201",
+        "received_at": "2026-11-03 08:02",
+        "sender": "Bayview Family Practice",
+        "expected_pages": 2,
+        "status": "Routed"
+      },
+      "downloaded_fax": {
+        "fax_id": "FX-201",
+        "received_at": "2026-11-03 08:02",
+        "sender": "Bayview Family Practice",
+        "expected_pages": 2,
+        "status": "New"
+      },
+      "pdf_path": "downloads/8b7d03f2c39f6fbb5fbd60c8.pdf",
+      "pdf_sha256": "3e5d967db98e1c52d6dd7a83eaa50620e65ca51fa2bf1c9a622720e019e88a39",
+      "downloaded_at": "2026-11-06T02:30:14.926640+00:00",
+      "extraction": {
+        "engine": "Tesseract 5.3.0; English; policy v1",
+        "pages": [
+          {
+            "number": 1,
+            "text": "BAYVIEW FAMILY PRACTICE\nFAX TRANSMISSION / SCANNED DOCUMENT\nFAX COVER SHEET\nTo: Harbor Specialty Clinic - Intake Department\nFrom: Bayview Family Practice\nNumber of pages (including cover): 2\nDate: November 3, 2026\nRE: Documents enclosed for new consultation\nConfidential patient paperwork follows on the next page.\nPlease route this packet according to the enclosed document.\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-201 Page 1 of 2",
+            "confidence": 95.45462131703397,
+            "lines": [
+              {
+                "text": "BAYVIEW FAMILY PRACTICE",
+                "confidence": 94.95522557142857
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 94.56839790322582
+              },
+              {
+                "text": "FAX COVER SHEET",
+                "confidence": 96.48784115384615
+              },
+              {
+                "text": "To: Harbor Specialty Clinic - Intake Department",
+                "confidence": 95.58177563414634
+              },
+              {
+                "text": "From: Bayview Family Practice",
+                "confidence": 96.26909223076925
+              },
+              {
+                "text": "Number of pages (including cover): 2",
+                "confidence": 96.1337668064516
+              },
+              {
+                "text": "Date: November 3, 2026",
+                "confidence": 96.31639657894738
+              },
+              {
+                "text": "RE: Documents enclosed for new consultation",
+                "confidence": 96.56701765789474
+              },
+              {
+                "text": "Confidential patient paperwork follows on the next page.",
+                "confidence": 96.24364557142857
+              },
+              {
+                "text": "Please route this packet according to the enclosed document.",
+                "confidence": 96.34866559615384
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 94.72827094736843
+              },
+              {
+                "text": "Transmission FX-201 Page 1 of 2",
+                "confidence": 90.25613999999999
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          },
+          {
+            "number": 2,
+            "text": "BAYVIEW FAMILY PRACTICE\nFAX TRANSMISSION / SCANNED DOCUMENT\nNEW PATIENT REFERRAL REQUEST\nDocument ID: RF-3001\nPatient: Elena Hart\nDate of Birth: 04/16/1987\nReferring physician: Dr. Mira Gomez\nRequested service: Neurology consultation\nReason: Evaluation of recurrent headaches.\nPriority: Routine\nPlease review attached patient details.\nCONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT\nTransmission FX-201 Page 2 of 2",
+            "confidence": 95.18098047813248,
+            "lines": [
+              {
+                "text": "BAYVIEW FAMILY PRACTICE",
+                "confidence": 94.65279476190476
+              },
+              {
+                "text": "FAX TRANSMISSION / SCANNED DOCUMENT",
+                "confidence": 94.29237593548388
+              },
+              {
+                "text": "NEW PATIENT REFERRAL REQUEST",
+                "confidence": 95.97675339999999
+              },
+              {
+                "text": "Document ID: RF-3001",
+                "confidence": 93.15734011111111
+              },
+              {
+                "text": "Patient: Elena Hart",
+                "confidence": 96.48441576470589
+              },
+              {
+                "text": "Date of Birth: 04/16/1987",
+                "confidence": 96.7327789090909
+              },
+              {
+                "text": "Referring physician: Dr. Mira Gomez",
+                "confidence": 96.21232390322581
+              },
+              {
+                "text": "Requested service: Neurology consultation",
+                "confidence": 96.26825571052632
+              },
+              {
+                "text": "Reason: Evaluation of recurrent headaches.",
+                "confidence": 96.04566336842106
+              },
+              {
+                "text": "Priority: Routine",
+                "confidence": 96.6073289375
+              },
+              {
+                "text": "Please review attached patient details.",
+                "confidence": 96.20377911428571
+              },
+              {
+                "text": "CONFIDENTIAL - SYNTHETIC TRAINING DOCUMENT",
+                "confidence": 93.70880542105263
+              },
+              {
+                "text": "Transmission FX-201 Page 2 of 2",
+                "confidence": 91.26429211538462
+              }
+            ],
+            "method": "rotation=0;psm=3",
+            "warnings": []
+          }
+        ],
+        "classification": "Referral",
+        "categories": [
+          "Referral"
+        ],
+        "evidence": [
+          {
+            "value": "Referral",
+            "page": 2,
+            "quote": "NEW PATIENT REFERRAL REQUEST",
+            "confidence": 95.97675339999999
+          }
+        ],
+        "source_ids": [
+          {
+            "value": "RF-3001",
+            "page": 2,
+            "quote": "Document ID: RF-3001",
+            "confidence": 93.15734011111111
+          }
+        ],
+        "patient_names": [
+          {
+            "value": "Elena Hart",
+            "page": 2,
+            "quote": "Patient: Elena Hart",
+            "confidence": 96.48441576470589
+          }
+        ],
+        "dates_of_birth": [
+          {
+            "value": "04/16/1987",
+            "page": 2,
+            "quote": "Date of Birth: 04/16/1987",
+            "confidence": 96.7327789090909
+          }
+        ],
+        "resend_evidence": [],
+        "flags": [],
+        "uncertainties": []
+      },
+      "action": "routed",
+      "selected": {
+        "assigned_to": "Olivia Chen - Referrals",
+        "document_type": "Referral",
+        "document_folder": "Referrals / New"
+      },
+      "routing_note": "OCR evidence: Referral. Source reference: RF-3001.",
+      "observed": {
+        "assigned_to": "Olivia Chen - Referrals",
+        "document_type": "Referral",
+        "document_folder": "Referrals / New"
+      },
+      "duplicate_of": null,
+      "verification": "verified",
+      "verified_at": "2026-11-06T02:30:16.554939+00:00",
+      "submission_pending": false,
+      "submit_attempts": 1,
+      "errors": [],
+      "events": [
+        {
+          "at": "2026-11-06T02:30:14.926619+00:00",
+          "stage": "downloaded",
+          "detail": "Downloaded and validated PDF through the UI.",
+          "context_id": "ea506132265a4c8c956df1fd47aea8ff"
+        },
+        {
+          "at": "2026-11-06T02:30:15.991363+00:00",
+          "stage": "reconciled",
+          "detail": "Fresh UI inspection shows New; safe to prepare a route.",
+          "context_id": "187dbbfdfd9f472eb12e50123fdaaf31"
+        },
+        {
+          "at": "2026-11-06T02:30:16.084943+00:00",
+          "stage": "submit_intent",
+          "detail": "Confirmed exact fax ID and three dropdown values.",
+          "context_id": "187dbbfdfd9f472eb12e50123fdaaf31"
+        },
+        {
+          "at": "2026-11-06T02:30:16.158222+00:00",
+          "stage": "submit_returned",
+          "detail": "Fax routing was recorded successfully.; Routing completed. This fax cannot be submitted again.",
+          "context_id": null
+        },
+        {
+          "at": "2026-11-06T02:30:16.554952+00:00",
+          "stage": "verified",
+          "detail": "Read completed assignment and all three saved values in the UI.",
+          "context_id": null
+        }
+      ]
+    }
+  ]
+}
