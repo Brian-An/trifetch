@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "linda-worker"
+version = "1.0.0"
+description = "Resumable browser-only routing for the synthetic Linda Mini portal"
+requires-python = ">=3.11"
+dependencies = [
+  "playwright==1.64.1",
+  "pypdfium2==5.14.0",
+  "pytesseract==0.3.13",
+  "pillow==13.0.0",
+  "pydantic==2.14.3",
+  "filelock==4.2.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.2.0", "ruff==0.17.4", "mypy==2.4.1"]
+portal = ["fastapi==0.162.0", "uvicorn==0.54.0", "python-multipart==0.0.33"]
+
+[project.scripts]
+linda-worker = "linda_worker.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["linda_worker*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["e2e: launches the portal and real Chromium (opt in with --run-e2e)"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+include = ["linda_worker/**/*.py", "tests/**/*.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["linda_worker"]
+
+[[tool.mypy.overrides]]
+module = ["pypdfium2.*", "pytesseract.*"]
+ignore_missing_imports = true
