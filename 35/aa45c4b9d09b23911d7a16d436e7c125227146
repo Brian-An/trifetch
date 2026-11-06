@@ -1,0 +1,51 @@
+linda_worker/runner.py
+  s_2265064f6b02bd::t_0ff65262303444 1-43
+linda_worker/portal.py
+  s_2265064f6b02bd::t_0ff65262303444 10
+tests/test_e2e.py
+  s_2265064f6b02bd::t_a952ada4f02336 121-123,130-132
+requirements-worker.txt
+  s_2265064f6b02bd::t_08e9d9412b83cd 452-474,682-685
+linda_worker/supervisor.py
+  s_2265064f6b02bd::t_8074148867d356 64-66,71
+  s_2265064f6b02bd::t_9fb9dde1e45972 91-94
+  s_2265064f6b02bd::t_fb990512e39677 41-44
+  s_2265064f6b02bd::t_a952ada4f02336 54
+  s_2265064f6b02bd::t_0ff65262303444 1-40,45-53,55-63,67-70,72-90,95-110
+linda_worker/worker.py
+  s_2265064f6b02bd::t_0ff65262303444 12,16,244
+pyproject.toml
+  s_2265064f6b02bd::t_0ff65262303444 17
+  s_2265064f6b02bd::t_a952ada4f02336 21
+tests/test_deadline.py
+  s_2265064f6b02bd::t_09b653f88d9f98 1-59,71-133,135-138,140-153,159-162,171,173-178,181-247,251-257
+  s_2265064f6b02bd::t_fb990512e39677 134,139,158,163-170,172,179-180
+  s_2265064f6b02bd::t_b294374282defe 60-70,154-157,248-250
+compose.yaml
+  s_2265064f6b02bd::t_a952ada4f02336 23-24
+linda_worker/config.py
+  s_2265064f6b02bd::t_0ff65262303444 1-22
+linda_worker/state.py
+  s_2265064f6b02bd::t_0ff65262303444 72-75,84,92
+linda_worker/cli.py
+  s_2265064f6b02bd::t_9fb9dde1e45972 43-44,47
+  s_2265064f6b02bd::t_0ff65262303444 5,14-15,29-35,42,45-46,48,88
+uv.lock
+  s_2265064f6b02bd::t_a026dfff1a99f4 377,388,403,410,633-660,958-966
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "35aa45c4b9d09b23911d7a16d436e7c125227146",
+  "prompts": {},
+  "sessions": {
+    "s_2265064f6b02bd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1ae87-101b-79d1-8405-ae739873bf0d",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "brian-an <brian.an0906@hotmail.com>"
+    }
+  }
+}
