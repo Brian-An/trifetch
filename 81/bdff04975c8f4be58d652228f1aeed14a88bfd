@@ -1,0 +1,25 @@
+tests/test_e2e.py
+  s_2265064f6b02bd::t_b45cd40e97f2f6 169-171,179-188,197-199,203-211,223-225,229-230,234-237
+  s_2265064f6b02bd::t_0f35384e39797e 9-10,167-168,172-178,189-196,200-202,212-222,226-228,231-233,238-242,253-263
+  s_2265064f6b02bd::t_2a0789ec784c0a 243-252
+linda_worker/worker.py
+  s_2265064f6b02bd::t_0f35384e39797e 190
+linda_worker/models.py
+  s_2265064f6b02bd::t_0f35384e39797e 94
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "81bdff04975c8f4be58d652228f1aeed14a88bfd",
+  "prompts": {},
+  "sessions": {
+    "s_2265064f6b02bd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1ae87-101b-79d1-8405-ae739873bf0d",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "brian-an <brian.an0906@hotmail.com>"
+    }
+  }
+}
