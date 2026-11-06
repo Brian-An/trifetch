@@ -1,0 +1,33 @@
+compose.yaml
+  s_2265064f6b02bd::t_ba6abbac46ba9d 10
+  s_2265064f6b02bd::t_a33f21c514aa54 1-9,11-31
+.dockerignore
+  s_2265064f6b02bd::t_a33f21c514aa54 1-16
+.github/workflows/check.yml
+  s_2265064f6b02bd::t_a33f21c514aa54 1-19
+.gitattributes
+  s_2265064f6b02bd::t_24ba327b652e16 1
+requirements-worker.txt
+  s_2265064f6b02bd::t_3cc88b05bd9407 1-681
+Dockerfile
+  s_2265064f6b02bd::t_a33f21c514aa54 1-14,16-20
+  s_2265064f6b02bd::t_24ba327b652e16 15
+uv.lock
+  s_2265064f6b02bd::t_e01f446cff129b 1-958
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7bd32e3b4b34379f87d01ef13bb88c9cc2a7a0ce",
+  "prompts": {},
+  "sessions": {
+    "s_2265064f6b02bd": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1ae87-101b-79d1-8405-ae739873bf0d",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "brian-an <brian.an0906@hotmail.com>"
+    }
+  }
+}
