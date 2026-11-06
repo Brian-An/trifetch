@@ -56,6 +56,7 @@ def test_atomic_report_replaces_previous_content_without_temporary_files(tmp_pat
     atomic_json(path, {"value": 1})
     atomic_json(path, {"value": 2})
     assert json.loads(path.read_text()) == {"value": 2}
+    assert path.stat().st_mode & 0o444 == 0o444
     assert sorted(p.name for p in tmp_path.iterdir()) == ["results.json"]
 
 

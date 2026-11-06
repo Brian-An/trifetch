@@ -19,6 +19,8 @@ def atomic_json(path: Path, content: object) -> None:
             stream.write("\n")
             stream.flush()
             os.fsync(stream.fileno())
+        # Container-generated exports remain readable by the host's reviewing user.
+        os.chmod(name, 0o644)
         os.replace(name, path)
     finally:
         Path(name).unlink(missing_ok=True)
