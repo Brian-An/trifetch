@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import logging
+import math
 import os
 import signal
 from pathlib import Path
@@ -10,9 +11,8 @@ from urllib.parse import urlsplit
 
 from filelock import FileLock, Timeout
 
-from linda_worker.portal import BrowserConfig
-from linda_worker.state import Store
-from linda_worker.worker import Worker, WorkerConfig
+from linda_worker.config import BrowserConfig, WorkerConfig
+from linda_worker.supervisor import supervise
 
 
 def positive(value: str) -> int:
@@ -26,12 +26,26 @@ def interrupted(signum: int, frame: FrameType | None) -> None:
     raise KeyboardInterrupt
 
 
+def positive_seconds(value: str) -> float:
+    seconds = float(value)
+    if not math.isfinite(seconds) or seconds <= 0:
+        raise argparse.ArgumentTypeError("must be a finite positive number of seconds")
+    return seconds
+
+
 def parser() -> argparse.ArgumentParser:
     result = argparse.ArgumentParser(description="Route synthetic faxes through the Linda Mini UI.")
     result.add_argument("--url", default=os.environ.get("LINDA_URL", "http://127.0.0.1:8000"))
     result.add_argument("--state-dir", type=Path, default=Path("artifacts/run"))
     result.add_argument("--attempts", type=positive, default=3)
     result.add_argument("--timeout-ms", type=positive, default=10_000)
+    result.add_argument(
+        "--deadline-seconds",
+        type=positive_seconds,
+        default=os.environ.get("LINDA_DEADLINE_SECONDS", "900"),
+        help="Maximum whole-run processing time, including downloads and native OCR/PDF work "
+        "(default: 900 seconds). Exits 124 on expiry; rerun to reconcile and resume.",
+    )
     result.add_argument("--headed", action="store_true", help="Show the Chromium browser.")
     result.add_argument(
         "--screenshots", action="store_true", help="Save confirmation/verification PNGs."
@@ -71,14 +85,7 @@ def main(argv: list[str] | None = None) -> int:
     signal.signal(signal.SIGTERM, interrupted)
     try:
         with FileLock(config.state_dir / "worker.lock", timeout=0):
-            store = Store(config.state_dir, f"{url}|{username}")
-            try:
-                worker = Worker(config, store)
-                path = worker.run()
-                logging.info("Results: %s", path)
-                return 0 if worker.success else 1
-            finally:
-                store.close()
+            return supervise(config, arguments.deadline_seconds)
     except Timeout:
         logging.error("Another worker owns this state directory; wait for it to finish.")
         return 2

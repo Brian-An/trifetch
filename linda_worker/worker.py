@@ -4,30 +4,20 @@ import hashlib
 import logging
 import time
 from contextlib import suppress
-from dataclasses import dataclass
 from pathlib import Path
 from typing import Literal
 
 from playwright.sync_api import Browser, Error, sync_playwright
 
+from linda_worker.config import WorkerConfig as WorkerConfig
 from linda_worker.models import Fax, Record, Route, timestamp
 from linda_worker.ocr import InvalidPDF, ensure_ocr, extract_pages, validate_pdf
 from linda_worker.policy import ROUTES, classify, duplicate_plan, received_key, routing_note
-from linda_worker.portal import BrowserConfig, PortalError, Session
+from linda_worker.portal import PortalError, Session
 from linda_worker.state import Store
 
 log = logging.getLogger(__name__)
 RECOVERABLE = (Error, PortalError, InvalidPDF, OSError, ValueError)
-
-
-@dataclass(frozen=True)
-class WorkerConfig:
-    browser: BrowserConfig
-    state_dir: Path
-    attempts: int = 3
-    headed: bool = False
-    screenshots: bool = False
-    retry_delay: float = 0.5
 
 
 class Worker:
@@ -251,6 +241,7 @@ class Worker:
                         record.verification = "pending"
                         record.verified_at = None
                         self.records.append(record)
+                        self.store.save(record)
                     log.info("Discovered %s transmissions across all inbox pages.", len(faxes))
                     complete = True
                     for record in self.records:

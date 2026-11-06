@@ -69,6 +69,10 @@ class Store:
         ).fetchone()
         return Record.model_validate_json(row[0]) if row else None
 
+    def all_records(self) -> list[Record]:
+        rows = self.connection.execute("SELECT payload FROM records ORDER BY fax_id").fetchall()
+        return [Record.model_validate_json(row[0]) for row in rows]
+
     def save(self, record: Record) -> None:
         with self.connection:
             self.connection.execute(
@@ -77,7 +81,7 @@ class Store:
                 (record.fax.fax_id, record.model_dump_json()),
             )
 
-    def export(self, records: list[Record], status: str) -> Path:
+    def export(self, records: list[Record], status: str, *, error: str | None = None) -> Path:
         path = self.directory / "results.json"
         atomic_json(
             path,
@@ -85,6 +89,7 @@ class Store:
                 "schema_version": 1,
                 "generated_at": timestamp(),
                 "run_status": status,
+                "run_error": error,
                 "summary": dict(Counter(record.action or "pending" for record in records)),
                 "faxes": [{"fax_id": r.fax.fax_id, **r.model_dump(mode="json")} for r in records],
             },

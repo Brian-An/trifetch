@@ -20,6 +20,8 @@ services:
     image: linda-worker:local
     init: true
     shm_size: 1gb
+    environment:
+      LINDA_DEADLINE_SECONDS: ${LINDA_DEADLINE_SECONDS:-900}
     depends_on:
       portal:
         condition: service_healthy

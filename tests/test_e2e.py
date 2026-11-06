@@ -118,13 +118,18 @@ def test_hard_restart_around_submit_is_reconciled(
 import os
 from linda_worker.cli import main
 from linda_worker.portal import Session
+from linda_worker.config import BrowserConfig, WorkerConfig
+from linda_worker.runner import run
+from linda_worker.cli import parser
 original = Session.submit
 def crash(self):
     if os.environ['CRASH_AFTER'] == '1':
         original(self)
     os._exit(75)
 Session.submit = crash
-raise SystemExit(main())
+args = parser().parse_args()
+config = WorkerConfig(BrowserConfig(args.url, 'agent.demo', 'demo-password-123'), args.state_dir)
+raise SystemExit(run(config))
 """
     result = subprocess.run(
         [sys.executable, "-c", script, "--url", portal, "--state-dir", str(directory)],

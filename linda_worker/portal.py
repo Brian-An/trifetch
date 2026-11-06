@@ -2,12 +2,12 @@ from __future__ import annotations
 
 import re
 from contextlib import AbstractContextManager
-from dataclasses import dataclass, field
 from pathlib import Path
 from uuid import uuid4
 
 from playwright.sync_api import Browser, BrowserContext, Locator, Page
 
+from linda_worker.config import BrowserConfig as BrowserConfig
 from linda_worker.models import Fax, Route
 
 
@@ -17,14 +17,6 @@ class PortalError(RuntimeError):
 
 class SessionExpired(PortalError):
     pass
-
-
-@dataclass(frozen=True)
-class BrowserConfig:
-    base_url: str
-    username: str
-    password: str = field(repr=False)
-    timeout_ms: int = 10_000
 
 
 def key_values(container: Locator) -> dict[str, str]:
